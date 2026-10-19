@@ -1,0 +1,3097 @@
+# Cybersecurity Master Academy — Curriculum Manifest
+# Schema: CURRICULUM_MANIFEST.md
+# Status: draft architecture. All modules are planned and unvalidated.
+# This file is the single source of truth for structure. Edit it first; regenerate catalog and diagrams.
+schema_version: 1.0.0
+curriculum_version: 0.1.0
+updated: '2026-10-19'
+status: draft
+description: Architecture manifest for the Cybersecurity Master Academy. Planning artifact; modules are
+  not yet authored or validated.
+source_ledger: REFERENCES.md
+level_definitions:
+- id: L0
+  name: Orientation and labcraft
+  exit_criterion: Operate safely and legally; write evidence-grade reports; reason about threats.
+- id: L1
+  name: Systems foundations
+  exit_criterion: 'Explain and measure the systems security depends on: hardware, OS, networks, code,
+    cryptography, identity, data, and supply chain.'
+- id: L2
+  name: Core security practice
+  exit_criterion: Build, assess, and defend a small system end to end; produce detection and response
+    evidence.
+- id: L3
+  name: Advanced specialization
+  exit_criterion: Perform deep technical work in at least one of binary, cloud, identity, detection, forensics,
+    or AI security.
+- id: L4
+  name: Expert practice and leadership
+  exit_criterion: Design programs and architectures; lead incidents and reviews; validate controls; teach
+    others.
+- id: L5
+  name: Research and contribution
+  exit_criterion: Formulate and execute original, ethical, reproducible research; defend it publicly.
+paths:
+- id: PATH-SECENG
+  name: Security Engineering
+  capstone: CAP-01
+  focus: Platform, cloud, identity, and infrastructure security engineering.
+  module_count: 35
+  modules:
+  - ORI-01
+  - ORI-02
+  - ORI-03
+  - SYS-01
+  - SYS-02
+  - SYS-03
+  - SYS-04
+  - NET-01
+  - NET-02
+  - PRG-01
+  - PRG-02
+  - CRY-01
+  - IAM-01
+  - DAT-01
+  - GIT-01
+  - SEC-01
+  - APP-01
+  - VUL-01
+  - NET-03
+  - END-01
+  - LOG-01
+  - IR-01
+  - RSK-01
+  - CLD-01
+  - CNT-01
+  - CLD-02
+  - K8S-01
+  - LOG-02
+  - SCS-01
+  - CRY-02
+  - SRE-01
+  - ARC-01
+  - GOV-01
+  - PRI-01
+  - CAP-01
+- id: PATH-APPSEC
+  name: Application and Product Security
+  capstone: CAP-02
+  focus: Secure development, web/API security, supply chain, and product-security programs.
+  module_count: 33
+  modules:
+  - ORI-01
+  - ORI-02
+  - ORI-03
+  - SYS-01
+  - SYS-02
+  - SYS-03
+  - SYS-04
+  - NET-01
+  - NET-02
+  - PRG-01
+  - CRY-01
+  - IAM-01
+  - DAT-01
+  - GIT-01
+  - SEC-01
+  - APP-01
+  - WEB-01
+  - API-01
+  - VUL-01
+  - NET-03
+  - LOG-01
+  - IR-01
+  - RSK-01
+  - CLD-01
+  - CNT-01
+  - CRY-02
+  - SCS-01
+  - AI-01
+  - MOB-01
+  - PDE-01
+  - GOV-01
+  - PRI-01
+  - CAP-02
+- id: PATH-OFFSEC
+  name: Offensive Security Research
+  capstone: CAP-03
+  focus: Exploit development, reverse engineering, adversary emulation, and vulnerability research.
+  module_count: 44
+  modules:
+  - ORI-01
+  - ORI-02
+  - ORI-03
+  - SYS-01
+  - SYS-02
+  - SYS-03
+  - SYS-04
+  - NET-01
+  - NET-02
+  - PRG-01
+  - PRG-02
+  - CRY-01
+  - IAM-01
+  - GIT-01
+  - SEC-01
+  - APP-01
+  - WEB-01
+  - API-01
+  - VUL-01
+  - NET-03
+  - END-01
+  - LOG-01
+  - IR-01
+  - RSK-01
+  - EXP-01
+  - EXP-02
+  - REV-01
+  - MAL-01
+  - AD-01
+  - CLD-01
+  - CNT-01
+  - CLD-02
+  - K8S-01
+  - LOG-02
+  - TI-01
+  - OFF-01
+  - RED-01
+  - PUR-01
+  - HW-01
+  - GOV-01
+  - RES-01
+  - RES-03
+  - RES-06
+  - CAP-03
+- id: PATH-DEFENSE
+  name: Defensive Security Research (Detection, IR, and DFIR)
+  capstone: CAP-04
+  focus: Detection engineering, incident response, forensics, malware triage, and control validation.
+  module_count: 44
+  modules:
+  - ORI-01
+  - ORI-02
+  - ORI-03
+  - SYS-01
+  - SYS-02
+  - SYS-03
+  - SYS-04
+  - NET-01
+  - NET-02
+  - PRG-01
+  - PRG-02
+  - CRY-01
+  - IAM-01
+  - DAT-01
+  - GIT-01
+  - SEC-01
+  - APP-01
+  - WEB-01
+  - VUL-01
+  - NET-03
+  - END-01
+  - LOG-01
+  - IR-01
+  - RSK-01
+  - CLD-01
+  - CNT-01
+  - AD-01
+  - K8S-01
+  - LOG-02
+  - IR-02
+  - FOR-01
+  - TI-01
+  - REV-01
+  - MAL-01
+  - ICS-01
+  - FOR-02
+  - MAL-02
+  - OFF-01
+  - PUR-01
+  - RES-01
+  - RES-02
+  - RES-04
+  - RES-06
+  - CAP-04
+- id: PATH-RESEARCH
+  name: Academic Security Research
+  capstone: CAP-05
+  focus: Research methods, measurement, formal analysis, ethics, teaching, and a thesis.
+  module_count: 36
+  modules:
+  - ORI-01
+  - ORI-02
+  - ORI-03
+  - SYS-01
+  - SYS-02
+  - SYS-03
+  - SYS-04
+  - NET-01
+  - NET-02
+  - PRG-01
+  - CRY-01
+  - IAM-01
+  - DAT-01
+  - GIT-01
+  - SEC-01
+  - APP-01
+  - WEB-01
+  - API-01
+  - VUL-01
+  - LOG-01
+  - RSK-01
+  - NET-03
+  - CLD-01
+  - CNT-01
+  - CRY-02
+  - SCS-01
+  - GOV-01
+  - RES-01
+  - RES-02
+  - RES-03
+  - RES-04
+  - RES-05
+  - RES-06
+  - RES-07
+  - TCH-01
+  - CAP-05
+modules:
+- id: ORI-01
+  title: Security Mindset, Ethics, Law, and Labcraft
+  level: L0
+  type: module
+  tracks:
+  - core
+  status: planned
+  validation_status: unvalidated
+  prerequisites: []
+  prerequisite_note: null
+  effort_hours:
+    reading: 4
+    practice: 6
+    assessment: 2
+    total: 12
+  outcomes:
+  - id: ORI-01.O1
+    statement: Classify five incident scenarios by the security property violated (confidentiality, integrity,
+      availability, authenticity, accountability) with at least 80% agreement against the answer key.
+  - id: ORI-01.O2
+    statement: Build an isolated lab with a host-only network, snapshots, and synthetic data, and demonstrate
+      rollback after a deliberate misconfiguration using a timestamped lab journal.
+  - id: ORI-01.O3
+    statement: Write a scoped authorization memo containing rules of engagement, stop conditions, data-handling
+      rules, and legal caveats for a simulated engagement.
+  assessment: Quiz; lab-build inspection; authorization-memo review.
+  sources:
+  - N01
+  - N11
+  - N23
+  safety:
+    isolation: none
+    risk: low
+  artifacts:
+    docs: []
+    labs: []
+    assessments: []
+  last_reviewed: null
+  reviewer: null
+- id: ORI-02
+  title: Threat Modeling Foundations
+  level: L0
+  type: module
+  tracks:
+  - core
+  status: planned
+  validation_status: unvalidated
+  prerequisites:
+  - ORI-01
+  prerequisite_note: null
+  effort_hours:
+    reading: 3
+    practice: 5
+    assessment: 2
+    total: 10
+  outcomes:
+  - id: ORI-02.O1
+    statement: Produce a data-flow diagram for a three-tier application that identifies assets, actors,
+      trust boundaries, and attack surface.
+  - id: ORI-02.O2
+    statement: Apply STRIDE and LINDDUN to the same design and record at least ten credible threats with
+      likelihood, impact, and a mapped mitigation or acceptance decision.
+  - id: ORI-02.O3
+    statement: Critique a supplied threat model for unstated assumptions and propose three validation
+      tests that would confirm or refute its highest risks.
+  assessment: Threat-model review; threat register; oral critique.
+  sources:
+  - N01
+  - N34
+  - O08
+  - B03
+  safety:
+    isolation: none
+    risk: low
+  artifacts:
+    docs: []
+    labs: []
+    assessments: []
+  last_reviewed: null
+  reviewer: null
+- id: ORI-03
+  title: Technical Writing, Evidence, and Reproducibility
+  level: L0
+  type: module
+  tracks:
+  - core
+  - research
+  status: planned
+  validation_status: unvalidated
+  prerequisites:
+  - ORI-01
+  prerequisite_note: null
+  effort_hours:
+    reading: 3
+    practice: 4
+    assessment: 1
+    total: 8
+  outcomes:
+  - id: ORI-03.O1
+    statement: Write an evidence note that separates observation, inference, uncertainty, and source for
+      a technical claim.
+  - id: ORI-03.O2
+    statement: Produce a reproducible lab report containing environment, versions, commands, expected
+      versus actual results, artifacts, and cleanup.
+  - id: ORI-03.O3
+    statement: Review a peer report against a reproducibility rubric and identify at least three defects
+      with concrete corrections.
+  assessment: Evidence note; reproducible lab report; peer review.
+  sources:
+  - N11
+  - N14
+  - A18
+  - A19
+  safety:
+    isolation: none
+    risk: low
+  artifacts:
+    docs: []
+    labs: []
+    assessments: []
+  last_reviewed: null
+  reviewer: null
+- id: SYS-01
+  title: Computer Architecture and Memory
+  level: L1
+  type: module
+  tracks:
+  - core
+  status: drafted
+  validation_status: structural
+  prerequisites:
+  - ORI-01
+  prerequisite_note: null
+  effort_hours:
+    reading: 10
+    practice: 14
+    assessment: 4
+    total: 28
+  outcomes:
+  - id: SYS-01.O1
+    statement: Explain fetch-decode-execute, register use, caches, virtual memory, and stack/heap layout,
+      and trace a C function call at the instruction level.
+  - id: SYS-01.O2
+    statement: Given a compiled x86-64 or ARM64 binary, annotate its sections, calling convention, and
+      memory layout using readelf/objdump or equivalent tools.
+  - id: SYS-01.O3
+    statement: Evaluate how NX, ASLR, canaries, and speculative execution affect both security and performance
+      in a written analysis.
+  assessment: Quiz; binary-analysis practical; oral trace.
+  sources:
+  - B06
+  - B09
+  - A08
+  - A20
+  - L09
+  - L10
+  - L11
+  - L12
+  - L13
+  - L17
+  - L20
+  safety:
+    isolation: none
+    risk: low
+  artifacts:
+    docs:
+    - tutorials/sys-01-computer-architecture/README.md
+    - tutorials/sys-01-computer-architecture/01-machine-model-and-execution.md
+    - tutorials/sys-01-computer-architecture/02-memory-layout-and-stack-frames.md
+    - tutorials/sys-01-computer-architecture/03-binary-anatomy-and-calling-conventions.md
+    - tutorials/sys-01-computer-architecture/04-memory-safety-and-mitigations.md
+    labs:
+    - labs/sys-01-memory-and-binaries/lab.md
+    - labs/sys-01-memory-and-binaries/rubric.md
+    - labs/sys-01-memory-and-binaries/reproducibility.md
+    - labs/sys-01-memory-and-binaries/solution.md
+    - labs/sys-01-memory-and-binaries/SHA256SUMS
+    - labs/sys-01-memory-and-binaries/starter/Makefile
+    - labs/sys-01-memory-and-binaries/starter/layout.c
+    - labs/sys-01-memory-and-binaries/starter/canary.c
+    - labs/sys-01-memory-and-binaries/scripts/measure_aslr.py
+    - labs/sys-01-memory-and-binaries/scripts/verify_evidence.py
+    assessments:
+    - assessments/sys-01/assessment.md
+    - assessments/sys-01/answer-key.md
+  last_reviewed: '2026-10-19'
+  reviewer: null
+- id: SYS-02
+  title: Operating Systems Internals
+  level: L1
+  type: module
+  tracks:
+  - core
+  status: drafted
+  validation_status: structural
+  prerequisites:
+  - SYS-01
+  prerequisite_note: null
+  effort_hours:
+    reading: 12
+    practice: 16
+    assessment: 4
+    total: 32
+  outcomes:
+  - id: SYS-02.O1
+    statement: Explain process and thread lifecycle, scheduling, virtual memory, syscalls, file descriptors,
+      and user/kernel transitions.
+  - id: SYS-02.O2
+    statement: Trace a program's syscalls and map observed behavior to kernel abstractions using strace,
+      dtrace, or equivalent tooling.
+  - id: SYS-02.O3
+    statement: Analyze a privilege-boundary violation scenario and identify the kernel control that failed
+      and the evidence that would confirm it.
+  assessment: Quiz; syscall-trace practical; boundary-failure analysis.
+  sources:
+  - B09
+  - B06
+  - T09
+  - L01
+  - L02
+  - L03
+  - L04
+  - L05
+  - L06
+  - L07
+  - L08
+  - L13
+  - L14
+  - L15
+  - L16
+  - L18
+  - L19
+  - L21
+  - L22
+  - L23
+  - L25
+  - L26
+  - L27
+  - L28
+  safety:
+    isolation: recommended
+    risk: low
+  artifacts:
+    docs:
+    - tutorials/sys-02-operating-systems/README.md
+    - tutorials/sys-02-operating-systems/01-privilege-levels-and-kernel-boundary.md
+    - tutorials/sys-02-operating-systems/02-processes-threads-and-scheduling.md
+    - tutorials/sys-02-operating-systems/03-files-permissions-and-access-control.md
+    - tutorials/sys-02-operating-systems/04-system-calls-and-tracing.md
+    - tutorials/sys-02-operating-systems/05-isolation-and-sandboxing.md
+    labs:
+    - labs/sys-02-syscalls-and-isolation/lab.md
+    - labs/sys-02-syscalls-and-isolation/rubric.md
+    - labs/sys-02-syscalls-and-isolation/reproducibility.md
+    - labs/sys-02-syscalls-and-isolation/solution.md
+    - labs/sys-02-syscalls-and-isolation/SHA256SUMS
+    - labs/sys-02-syscalls-and-isolation/starter/fileio.c
+    - labs/sys-02-syscalls-and-isolation/scripts/collect_evidence.sh
+    - labs/sys-02-syscalls-and-isolation/scripts/verify_evidence.py
+    - labs/sys-02-syscalls-and-isolation/environment/Containerfile
+    assessments:
+    - assessments/sys-02/assessment.md
+    - assessments/sys-02/answer-key.md
+  last_reviewed: '2026-10-19'
+  reviewer: null
+- id: SYS-03
+  title: Linux Administration and Hardening
+  level: L1
+  type: module
+  tracks:
+  - core
+  status: planned
+  validation_status: unvalidated
+  prerequisites:
+  - SYS-02
+  prerequisite_note: null
+  effort_hours:
+    reading: 8
+    practice: 12
+    assessment: 2
+    total: 22
+  outcomes:
+  - id: SYS-03.O1
+    statement: Provision a Linux system with users, groups, permissions, ACLs, systemd services, and package-integrity
+      checks.
+  - id: SYS-03.O2
+    statement: Apply a documented subset of CIS Linux Benchmark Level 1 controls and justify every deviation
+      with a risk decision.
+  - id: SYS-03.O3
+    statement: Diagnose a misconfigured service from logs and least-privilege analysis, then verify the
+      remediation.
+  assessment: Provisioning lab; benchmark evidence; remediation report.
+  sources:
+  - N35
+  - C05
+  - B01
+  safety:
+    isolation: recommended
+    risk: low
+  artifacts:
+    docs: []
+    labs: []
+    assessments: []
+  last_reviewed: null
+  reviewer: null
+- id: SYS-04
+  title: Windows Architecture, Registry, NTFS, and AD Preview
+  level: L1
+  type: module
+  tracks:
+  - core
+  status: planned
+  validation_status: unvalidated
+  prerequisites:
+  - SYS-02
+  prerequisite_note: null
+  effort_hours:
+    reading: 10
+    practice: 14
+    assessment: 4
+    total: 28
+  outcomes:
+  - id: SYS-04.O1
+    statement: Explain the Windows object manager, registry hives, NTFS permissions, service model, token
+      model, and core event logs.
+  - id: SYS-04.O2
+    statement: Audit users, services, scheduled tasks, and ACLs with native tools and produce a baseline
+      suitable for later comparison.
+  - id: SYS-04.O3
+    statement: Map a Windows persistence technique to its filesystem, registry, and event-log artifacts,
+      and state which artifact is most reliable.
+  assessment: Audit lab; artifact-mapping report; quiz.
+  sources:
+  - B09
+  - T09
+  - M01
+  safety:
+    isolation: recommended
+    risk: low
+  artifacts:
+    docs: []
+    labs: []
+    assessments: []
+  last_reviewed: null
+  reviewer: null
+- id: NET-01
+  title: Networking and TCP/IP
+  level: L1
+  type: module
+  tracks:
+  - core
+  status: planned
+  validation_status: unvalidated
+  prerequisites:
+  - SYS-01
+  prerequisite_note: null
+  effort_hours:
+    reading: 12
+    practice: 14
+    assessment: 4
+    total: 30
+  outcomes:
+  - id: NET-01.O1
+    statement: Explain encapsulation, ARP, IPv4/IPv6 addressing, TCP/UDP behavior, routing, NAT, and ICMP,
+      and solve subnetting problems without tools.
+  - id: NET-01.O2
+    statement: Capture and analyze traffic with tcpdump and Wireshark, reconstruct a TCP session, and
+      identify at least three anomalies.
+  - id: NET-01.O3
+    statement: Diagnose a connectivity or segmentation failure using a layered method and document the
+      evidence at each layer.
+  assessment: Subnetting quiz; packet-analysis lab; troubleshooting report.
+  sources:
+  - P08
+  - B14
+  safety:
+    isolation: none
+    risk: low
+  artifacts:
+    docs: []
+    labs: []
+    assessments: []
+  last_reviewed: null
+  reviewer: null
+- id: NET-02
+  title: DNS, HTTP, and TLS
+  level: L1
+  type: module
+  tracks:
+  - core
+  status: planned
+  validation_status: unvalidated
+  prerequisites:
+  - NET-01
+  prerequisite_note: null
+  effort_hours:
+    reading: 8
+    practice: 12
+    assessment: 2
+    total: 22
+  outcomes:
+  - id: NET-02.O1
+    statement: Explain DNS resolution and caching, HTTP semantics, cookies, CORS, and the TLS 1.3 handshake.
+  - id: NET-02.O2
+    statement: Trace an HTTPS request from name resolution through TLS completion and identify each trust
+      decision and failure mode.
+  - id: NET-02.O3
+    statement: Analyze a dangling DNS record, permissive CORS policy, or weak TLS configuration and propose
+      detection and remediation.
+  assessment: Protocol trace; misconfiguration analysis; quiz.
+  sources:
+  - P05
+  - P06
+  - P07
+  - P11
+  - P12
+  safety:
+    isolation: none
+    risk: low
+  artifacts:
+    docs: []
+    labs: []
+    assessments: []
+  last_reviewed: null
+  reviewer: null
+- id: PRG-01
+  title: Python for Security Engineering
+  level: L1
+  type: module
+  tracks:
+  - core
+  status: planned
+  validation_status: unvalidated
+  prerequisites:
+  - ORI-01
+  prerequisite_note: null
+  effort_hours:
+    reading: 6
+    practice: 12
+    assessment: 2
+    total: 20
+  outcomes:
+  - id: PRG-01.O1
+    statement: Write tested Python tools for file parsing, HTTP requests, sockets, and process inspection
+      with explicit error handling.
+  - id: PRG-01.O2
+    statement: Build a log normalizer that converts heterogeneous inputs into validated JSON and passes
+      a supplied test suite.
+  - id: PRG-01.O3
+    statement: Review a security tool for command injection, unsafe deserialization, path traversal, and
+      dependency risk, and propose fixes.
+  assessment: Tool build with tests; code review.
+  sources:
+  - O09
+  - B12
+  - O01
+  safety:
+    isolation: none
+    risk: low
+  artifacts:
+    docs: []
+    labs: []
+    assessments: []
+  last_reviewed: null
+  reviewer: null
+- id: PRG-02
+  title: Bash and PowerShell for Operators
+  level: L1
+  type: module
+  tracks:
+  - core
+  status: planned
+  validation_status: unvalidated
+  prerequisites:
+  - SYS-03
+  - SYS-04
+  prerequisite_note: null
+  effort_hours:
+    reading: 4
+    practice: 7
+    assessment: 1
+    total: 12
+  outcomes:
+  - id: PRG-02.O1
+    statement: Write idempotent Bash and PowerShell scripts with strict error handling, logging, and dry-run
+      modes.
+  - id: PRG-02.O2
+    statement: Automate an evidence-collection task that preserves timestamps and hashes and documents
+      chain of custody.
+  - id: PRG-02.O3
+    statement: Compare Linux and Windows shell telemetry and explain which artifacts each leaves for defenders.
+  assessment: Scripted collection lab; evidence-integrity check.
+  sources:
+  - N14
+  - T09
+  - B14
+  safety:
+    isolation: none
+    risk: low
+  artifacts:
+    docs: []
+    labs: []
+    assessments: []
+  last_reviewed: null
+  reviewer: null
+- id: CRY-01
+  title: Cryptography Foundations
+  level: L1
+  type: module
+  tracks:
+  - core
+  status: planned
+  validation_status: unvalidated
+  prerequisites:
+  - NET-01
+  - PRG-01
+  prerequisite_note: null
+  effort_hours:
+    reading: 12
+    practice: 16
+    assessment: 4
+    total: 32
+  outcomes:
+  - id: CRY-01.O1
+    statement: Explain confidentiality, integrity, authenticity, key exchange, and the assumptions behind
+      common cryptographic security definitions.
+  - id: CRY-01.O2
+    statement: Correctly apply symmetric encryption, hashing, MACs, KDFs, and signatures with a vetted
+      library, and demonstrate one realistic misuse failure.
+  - id: CRY-01.O3
+    statement: Analyze a protocol for replay, downgrade, key-reuse, and nonce-reuse risks and justify
+      concrete fixes.
+  assessment: Misuse lab; protocol analysis; quiz.
+  sources:
+  - B02
+  - B04
+  - B05
+  - N36
+  safety:
+    isolation: none
+    risk: low
+  artifacts:
+    docs: []
+    labs: []
+    assessments: []
+  last_reviewed: null
+  reviewer: null
+- id: IAM-01
+  title: Identity and Access Management Foundations
+  level: L1
+  type: module
+  tracks:
+  - core
+  status: planned
+  validation_status: unvalidated
+  prerequisites:
+  - NET-02
+  - CRY-01
+  prerequisite_note: null
+  effort_hours:
+    reading: 6
+    practice: 10
+    assessment: 2
+    total: 18
+  outcomes:
+  - id: IAM-01.O1
+    statement: Explain authentication factors, session management, OAuth 2.0/OIDC, SAML, and RBAC/ABAC/ReBAC
+      authorization models.
+  - id: IAM-01.O2
+    statement: Implement and test a login and token-validation flow against CSRF, session fixation, open
+      redirect, and token replay.
+  - id: IAM-01.O3
+    statement: Threat-model an identity architecture and identify at least three trust-boundary failures
+      with mitigations.
+  assessment: Auth-flow implementation; security tests; threat model.
+  sources:
+  - N04
+  - P09
+  - P10
+  - O02
+  safety:
+    isolation: none
+    risk: low
+  artifacts:
+    docs: []
+    labs: []
+    assessments: []
+  last_reviewed: null
+  reviewer: null
+- id: DAT-01
+  title: Data and Database Security
+  level: L1
+  type: module
+  tracks:
+  - core
+  status: planned
+  validation_status: unvalidated
+  prerequisites:
+  - NET-02
+  - IAM-01
+  prerequisite_note: null
+  effort_hours:
+    reading: 6
+    practice: 8
+    assessment: 2
+    total: 16
+  outcomes:
+  - id: DAT-01.O1
+    statement: Explain data classification, encryption at rest and in transit, key management, backup
+      integrity, and retention.
+  - id: DAT-01.O2
+    statement: Exploit and remediate SQL injection and excessive database privileges in a local intentionally
+      vulnerable application.
+  - id: DAT-01.O3
+    statement: Design a data-protection control set mapped to NIST CSF 2.0 functions and privacy principles.
+  assessment: SQLi lab; data-protection design review.
+  sources:
+  - O09
+  - N01
+  - O02
+  safety:
+    isolation: none
+    risk: low
+  artifacts:
+    docs: []
+    labs: []
+    assessments: []
+  last_reviewed: null
+  reviewer: null
+- id: GIT-01
+  title: Git, CI/CD, and Supply Chain Foundations
+  level: L1
+  type: module
+  tracks:
+  - core
+  status: planned
+  validation_status: unvalidated
+  prerequisites:
+  - PRG-01
+  prerequisite_note: null
+  effort_hours:
+    reading: 4
+    practice: 7
+    assessment: 1
+    total: 12
+  outcomes:
+  - id: GIT-01.O1
+    statement: Explain the Git object model, branching, signed commits, and CI/CD trust boundaries.
+  - id: GIT-01.O2
+    statement: Build a pipeline with dependency pinning, SBOM generation, artifact signing, and verification.
+  - id: GIT-01.O3
+    statement: Analyze a software supply-chain attack path and identify preventive and detective controls
+      at each stage.
+  assessment: Pipeline lab; supply-chain analysis.
+  sources:
+  - P01
+  - C04
+  - P02
+  - P03
+  safety:
+    isolation: none
+    risk: low
+  artifacts:
+    docs: []
+    labs: []
+    assessments: []
+  last_reviewed: null
+  reviewer: null
+- id: SEC-01
+  title: Secure Design Principles and Architecture
+  level: L2
+  type: module
+  tracks:
+  - core
+  status: planned
+  validation_status: unvalidated
+  prerequisites:
+  - ORI-02
+  - SYS-02
+  - NET-02
+  prerequisite_note: null
+  effort_hours:
+    reading: 9
+    practice: 12
+    assessment: 3
+    total: 24
+  outcomes:
+  - id: SEC-01.O1
+    statement: Apply least privilege, fail-safe defaults, complete mediation, separation of duties, and
+      economy of mechanism to a system design.
+  - id: SEC-01.O2
+    statement: Produce a security architecture review containing trust boundaries, data flows, assumptions,
+      and prioritized risks.
+  - id: SEC-01.O3
+    statement: Compare defense-in-depth and single-control designs using a threat model plus cost, operability,
+      and failure-mode analysis.
+  assessment: Architecture review; design trade-off memo.
+  sources:
+  - A01
+  - N07
+  - O02
+  safety:
+    isolation: none
+    risk: low
+  artifacts:
+    docs: []
+    labs: []
+    assessments: []
+  last_reviewed: null
+  reviewer: null
+- id: APP-01
+  title: Application Security Fundamentals
+  level: L2
+  type: module
+  tracks:
+  - core
+  status: planned
+  validation_status: unvalidated
+  prerequisites:
+  - SEC-01
+  - PRG-01
+  - NET-02
+  prerequisite_note: null
+  effort_hours:
+    reading: 10
+    practice: 18
+    assessment: 4
+    total: 32
+  outcomes:
+  - id: APP-01.O1
+    statement: Explain input handling, output encoding, authentication, session management, access control,
+      and error-handling vulnerability classes.
+  - id: APP-01.O2
+    statement: Find and fix at least ten vulnerability classes in an intentionally vulnerable application,
+      with regression tests proving each fix.
+  - id: APP-01.O3
+    statement: Integrate SAST, DAST, and dependency scanning into CI and triage findings by exploitability
+      and reachability.
+  assessment: Vulnerability-fix lab with regression tests; CI triage report.
+  sources:
+  - O01
+  - O02
+  - O09
+  - B12
+  safety:
+    isolation: none
+    risk: low
+  artifacts:
+    docs: []
+    labs: []
+    assessments: []
+  last_reviewed: null
+  reviewer: null
+- id: WEB-01
+  title: Web Security Deep Dive
+  level: L2
+  type: module
+  tracks:
+  - core
+  status: planned
+  validation_status: unvalidated
+  prerequisites:
+  - APP-01
+  prerequisite_note: null
+  effort_hours:
+    reading: 12
+    practice: 20
+    assessment: 4
+    total: 36
+  outcomes:
+  - id: WEB-01.O1
+    statement: 'Explain the browser security model: same-origin policy, CORS, CSP, cookies, storage, and
+      DOM sinks.'
+  - id: WEB-01.O2
+    statement: Demonstrate and remediate XSS, CSRF, SSRF, IDOR, insecure deserialization, and request
+      smuggling in a local lab.
+  - id: WEB-01.O3
+    statement: Perform a manual assessment against OWASP WSTG and produce a risk-ranked report with reproducible
+      evidence.
+  assessment: WSTG assessment report; remediation tests.
+  sources:
+  - O03
+  - B11
+  - P06
+  - P12
+  safety:
+    isolation: none
+    risk: low
+  artifacts:
+    docs: []
+    labs: []
+    assessments: []
+  last_reviewed: null
+  reviewer: null
+- id: API-01
+  title: API Security
+  level: L2
+  type: module
+  tracks:
+  - core
+  status: planned
+  validation_status: unvalidated
+  prerequisites:
+  - WEB-01
+  prerequisite_note: null
+  effort_hours:
+    reading: 7
+    practice: 11
+    assessment: 2
+    total: 20
+  outcomes:
+  - id: API-01.O1
+    statement: Explain REST, GraphQL, and gRPC authentication and authorization, object-level authorization,
+      rate limiting, and schema validation.
+  - id: API-01.O2
+    statement: Test an API for BOLA, BFLA, mass assignment, and excessive data exposure, then implement
+      and verify fixes.
+  - id: API-01.O3
+    statement: Design an API gateway policy with authentication, authorization, validation, and abuse-detection
+      requirements.
+  assessment: API test suite; gateway-policy review.
+  sources:
+  - O04
+  - O02
+  - P06
+  safety:
+    isolation: none
+    risk: low
+  artifacts:
+    docs: []
+    labs: []
+    assessments: []
+  last_reviewed: null
+  reviewer: null
+- id: VUL-01
+  title: Vulnerability Management and Risk-Based Prioritization
+  level: L2
+  type: module
+  tracks:
+  - core
+  status: planned
+  validation_status: unvalidated
+  prerequisites:
+  - SEC-01
+  - NET-01
+  prerequisite_note: null
+  effort_hours:
+    reading: 8
+    practice: 10
+    assessment: 2
+    total: 20
+  outcomes:
+  - id: VUL-01.O1
+    statement: Explain CVE, CWE, CVSS v4.0, EPSS, and CISA KEV, including what each metric does and does
+      not measure.
+  - id: VUL-01.O2
+    statement: Build a prioritization model that combines exploitability, exposure, business impact, and
+      compensating controls.
+  - id: VUL-01.O3
+    statement: Evaluate a vulnerability-management program's metrics and propose three evidence-based
+      improvements.
+  assessment: Prioritization model; program-evaluation memo.
+  sources:
+  - C01
+  - C02
+  - C03
+  - N11
+  safety:
+    isolation: none
+    risk: low
+  artifacts:
+    docs: []
+    labs: []
+    assessments: []
+  last_reviewed: null
+  reviewer: null
+- id: NET-03
+  title: Network Security and Defenses
+  level: L2
+  type: module
+  tracks:
+  - core
+  status: planned
+  validation_status: unvalidated
+  prerequisites:
+  - NET-01
+  - NET-02
+  - CRY-01
+  prerequisite_note: null
+  effort_hours:
+    reading: 10
+    practice: 14
+    assessment: 4
+    total: 28
+  outcomes:
+  - id: NET-03.O1
+    statement: Explain segmentation, firewalls, IDS/IPS, VPNs, zero trust, and the limits of encrypted-traffic
+      inspection.
+  - id: NET-03.O2
+    statement: Configure a segmented lab and detect a simulated lateral-movement attempt with network
+      telemetry.
+  - id: NET-03.O3
+    statement: Evaluate a network defense design against a threat model and identify at least three blind
+      spots.
+  assessment: Segmentation lab; detection evidence; design review.
+  sources:
+  - N05
+  - N25
+  - N26
+  - P05
+  safety:
+    isolation: recommended
+    risk: low
+  artifacts:
+    docs: []
+    labs: []
+    assessments: []
+  last_reviewed: null
+  reviewer: null
+- id: END-01
+  title: Endpoint Security and EDR
+  level: L2
+  type: module
+  tracks:
+  - core
+  status: planned
+  validation_status: unvalidated
+  prerequisites:
+  - SYS-03
+  - SYS-04
+  prerequisite_note: null
+  effort_hours:
+    reading: 7
+    practice: 11
+    assessment: 2
+    total: 20
+  outcomes:
+  - id: END-01.O1
+    statement: Explain endpoint telemetry sources, EDR detection logic, allowlisting, and hardening baselines.
+  - id: END-01.O2
+    statement: Deploy a lab telemetry agent, detect a simulated ATT&CK technique, and tune one false-positive
+      source.
+  - id: END-01.O3
+    statement: Assess endpoint coverage against ATT&CK and propose prioritized gap remediation.
+  assessment: Telemetry lab; coverage assessment.
+  sources:
+  - M01
+  - T09
+  - N27
+  safety:
+    isolation: recommended
+    risk: low
+  artifacts:
+    docs: []
+    labs: []
+    assessments: []
+  last_reviewed: null
+  reviewer: null
+- id: LOG-01
+  title: Logging, Telemetry, and Detection Engineering I
+  level: L2
+  type: module
+  tracks:
+  - core
+  status: planned
+  validation_status: unvalidated
+  prerequisites:
+  - SYS-03
+  - SYS-04
+  - NET-01
+  prerequisite_note: null
+  effort_hours:
+    reading: 9
+    practice: 14
+    assessment: 3
+    total: 26
+  outcomes:
+  - id: LOG-01.O1
+    statement: Explain log sources, schemas, normalization, time synchronization, retention, and evidence
+      handling.
+  - id: LOG-01.O2
+    statement: Build a pipeline that ingests Linux, Windows, and network logs and supports structured
+      queries.
+  - id: LOG-01.O3
+    statement: Write and test ten detections mapped to ATT&CK, reporting precision and recall on synthetic
+      data.
+  assessment: Pipeline lab; detection tests with metrics.
+  sources:
+  - N10
+  - T01
+  - M01
+  safety:
+    isolation: recommended
+    risk: low
+  artifacts:
+    docs: []
+    labs: []
+    assessments: []
+  last_reviewed: null
+  reviewer: null
+- id: IR-01
+  title: Incident Response Foundations
+  level: L2
+  type: module
+  tracks:
+  - core
+  status: planned
+  validation_status: unvalidated
+  prerequisites:
+  - LOG-01
+  prerequisite_note: null
+  effort_hours:
+    reading: 7
+    practice: 11
+    assessment: 2
+    total: 20
+  outcomes:
+  - id: IR-01.O1
+    statement: Explain the incident-response lifecycle and its alignment with NIST CSF 2.0.
+  - id: IR-01.O2
+    statement: Run a tabletop and a lab incident from detection through containment while preserving evidence.
+  - id: IR-01.O3
+    statement: Write an after-action report with timeline, root cause, impact, and corrective actions.
+  assessment: Tabletop; lab incident; after-action report.
+  sources:
+  - N03
+  - N15
+  - N01
+  safety:
+    isolation: recommended
+    risk: low
+  artifacts:
+    docs: []
+    labs: []
+    assessments: []
+  last_reviewed: null
+  reviewer: null
+- id: RSK-01
+  title: Risk Management and Security Governance
+  level: L2
+  type: module
+  tracks:
+  - core
+  status: planned
+  validation_status: unvalidated
+  prerequisites:
+  - ORI-02
+  prerequisite_note: null
+  effort_hours:
+    reading: 7
+    practice: 9
+    assessment: 2
+    total: 18
+  outcomes:
+  - id: RSK-01.O1
+    statement: Explain risk appetite, qualitative and quantitative assessment, control frameworks, and
+      three-lines-of-defense roles.
+  - id: RSK-01.O2
+    statement: Perform a risk assessment for a scenario and justify treatment choices with explicit assumptions.
+  - id: RSK-01.O3
+    statement: Map controls to NIST CSF 2.0 and ISO/IEC 27001:2022 and identify gaps and duplicate controls.
+  assessment: Risk assessment; control mapping.
+  sources:
+  - N09
+  - N08
+  - N01
+  - I01
+  safety:
+    isolation: none
+    risk: low
+  artifacts:
+    docs: []
+    labs: []
+    assessments: []
+  last_reviewed: null
+  reviewer: null
+- id: CLD-01
+  title: Cloud Security Foundations
+  level: L2
+  type: module
+  tracks:
+  - core
+  status: planned
+  validation_status: unvalidated
+  prerequisites:
+  - NET-03
+  - IAM-01
+  prerequisite_note: null
+  effort_hours:
+    reading: 8
+    practice: 13
+    assessment: 3
+    total: 24
+  outcomes:
+  - id: CLD-01.O1
+    statement: Explain shared responsibility, cloud identity, network isolation, key management, and cloud
+      logging.
+  - id: CLD-01.O2
+    statement: Build a hardened baseline in one cloud or local emulator using infrastructure as code and
+      policy as code.
+  - id: CLD-01.O3
+    statement: Analyze a cloud attack path and map each step to preventive and detective controls.
+  assessment: IaC baseline; attack-path analysis.
+  sources:
+  - N30
+  - N31
+  - N05
+  - N33
+  safety:
+    isolation: recommended
+    risk: low
+  artifacts:
+    docs: []
+    labs: []
+    assessments: []
+  last_reviewed: null
+  reviewer: null
+- id: CNT-01
+  title: Container Security Foundations
+  level: L2
+  type: module
+  tracks:
+  - core
+  status: planned
+  validation_status: unvalidated
+  prerequisites:
+  - SYS-03
+  - GIT-01
+  prerequisite_note: null
+  effort_hours:
+    reading: 6
+    practice: 10
+    assessment: 2
+    total: 18
+  outcomes:
+  - id: CNT-01.O1
+    statement: Explain namespaces, cgroups, capabilities, seccomp, image layers, and registry trust.
+  - id: CNT-01.O2
+    statement: Build a minimal image, scan it, sign it, and run it with least privilege and a read-only
+      filesystem.
+  - id: CNT-01.O3
+    statement: Analyze container escape and supply-chain risks and propose layered mitigations.
+  assessment: Image build/sign/run lab; escape analysis.
+  sources:
+  - N12
+  - O10
+  - B10
+  safety:
+    isolation: required
+    risk: moderate
+  artifacts:
+    docs: []
+    labs: []
+    assessments: []
+  last_reviewed: null
+  reviewer: null
+- id: EXP-01
+  title: Memory Safety and Exploit Mitigations
+  level: L3
+  type: module
+  tracks:
+  - offsec
+  - research
+  status: planned
+  validation_status: unvalidated
+  prerequisites:
+  - SYS-01
+  - SYS-02
+  - PRG-01
+  prerequisite_note: null
+  effort_hours:
+    reading: 12
+    practice: 20
+    assessment: 4
+    total: 36
+  outcomes:
+  - id: EXP-01.O1
+    statement: Explain stack and heap overflows, use-after-free, integer errors, and type confusion at
+      the memory level.
+  - id: EXP-01.O2
+    statement: Exploit a purpose-built vulnerable binary with NX, ASLR, and canaries enabled, and explain
+      each mitigation's effect.
+  - id: EXP-01.O3
+    statement: Evaluate CFI, shadow stacks, and memory-safe languages for coverage, performance, and bypass
+      classes.
+  assessment: Mitigation-bypass lab; mitigation evaluation.
+  sources:
+  - A08
+  - A09
+  - A10
+  - B06
+  safety:
+    isolation: required
+    risk: moderate
+  artifacts:
+    docs: []
+    labs: []
+    assessments: []
+  last_reviewed: null
+  reviewer: null
+- id: EXP-02
+  title: Binary Exploitation
+  level: L3
+  type: module
+  tracks:
+  - offsec
+  status: planned
+  validation_status: unvalidated
+  prerequisites:
+  - EXP-01
+  prerequisite_note: null
+  effort_hours:
+    reading: 10
+    practice: 26
+    assessment: 4
+    total: 40
+  outcomes:
+  - id: EXP-02.O1
+    statement: Develop reliable exploits for heap, ROP, and format-string scenarios in an isolated CTF-style
+      lab.
+  - id: EXP-02.O2
+    statement: Build an exploit that bypasses ASLR, NX, and PIE, and document reliability across runs.
+  - id: EXP-02.O3
+    statement: Propose and test a mitigation or detection that raises the cost of the demonstrated exploit.
+  assessment: Exploit-development lab; reliability report.
+  sources:
+  - A07
+  - B06
+  - T08
+  safety:
+    isolation: required
+    risk: high
+  artifacts:
+    docs: []
+    labs: []
+    assessments: []
+  last_reviewed: null
+  reviewer: null
+- id: REV-01
+  title: Reverse Engineering Fundamentals
+  level: L3
+  type: module
+  tracks:
+  - offsec
+  - defense
+  - research
+  status: planned
+  validation_status: unvalidated
+  prerequisites:
+  - SYS-01
+  - SYS-04
+  - PRG-01
+  prerequisite_note: null
+  effort_hours:
+    reading: 10
+    practice: 18
+    assessment: 4
+    total: 32
+  outcomes:
+  - id: REV-01.O1
+    statement: Explain executable formats, linking, calling conventions, and control-flow reconstruction.
+  - id: REV-01.O2
+    statement: Reverse a small binary with static and dynamic tools and recover its core algorithm and
+      key logic.
+  - id: REV-01.O3
+    statement: Produce a reproducible analysis report that separates evidence, inference, and uncertainty.
+  assessment: Binary-analysis report; oral defense.
+  sources:
+  - B06
+  - B13
+  - T08
+  safety:
+    isolation: none
+    risk: moderate
+  artifacts:
+    docs: []
+    labs: []
+    assessments: []
+  last_reviewed: null
+  reviewer: null
+- id: MAL-01
+  title: Malware Analysis in Isolated Labs
+  level: L3
+  type: module
+  tracks:
+  - offsec
+  - defense
+  - research
+  status: planned
+  validation_status: unvalidated
+  prerequisites:
+  - REV-01
+  - NET-01
+  prerequisite_note: null
+  effort_hours:
+    reading: 10
+    practice: 22
+    assessment: 4
+    total: 36
+  outcomes:
+  - id: MAL-01.O1
+    statement: Explain malware taxonomy, infection vectors, persistence, command-and-control, and anti-analysis
+      techniques.
+  - id: MAL-01.O2
+    statement: Perform static and dynamic analysis of synthetic malware in an isolated lab and produce
+      IOCs plus an ATT&CK mapping.
+  - id: MAL-01.O3
+    statement: Evaluate containment and detection coverage for the analyzed sample and identify residual
+      risk.
+  assessment: Isolated analysis lab; IOC/ATT&CK report.
+  sources:
+  - N27
+  - B07
+  - M01
+  - T02
+  safety:
+    isolation: required
+    risk: high
+  artifacts:
+    docs: []
+    labs: []
+    assessments: []
+  last_reviewed: null
+  reviewer: null
+- id: AD-01
+  title: Active Directory Attack and Defense
+  level: L3
+  type: module
+  tracks:
+  - offsec
+  - defense
+  status: planned
+  validation_status: unvalidated
+  prerequisites:
+  - SYS-04
+  - NET-03
+  prerequisite_note: null
+  effort_hours:
+    reading: 12
+    practice: 20
+    assessment: 4
+    total: 36
+  outcomes:
+  - id: AD-01.O1
+    statement: Explain AD DS, Kerberos, LDAP, Group Policy, trusts, and delegation.
+  - id: AD-01.O2
+    statement: Demonstrate and detect credential abuse and privilege-escalation paths in a lab domain.
+  - id: AD-01.O3
+    statement: Design tiered administration and monitoring controls that address the demonstrated paths.
+  assessment: AD lab; detection evidence; tiering design.
+  sources:
+  - B09
+  - M01
+  - T09
+  safety:
+    isolation: required
+    risk: moderate
+  artifacts:
+    docs: []
+    labs: []
+    assessments: []
+  last_reviewed: null
+  reviewer: null
+- id: CLD-02
+  title: Cloud Security Engineering
+  level: L3
+  type: module
+  tracks:
+  - seceng
+  - offsec
+  status: planned
+  validation_status: unvalidated
+  prerequisites:
+  - CLD-01
+  - IAM-01
+  prerequisite_note: null
+  effort_hours:
+    reading: 10
+    practice: 18
+    assessment: 4
+    total: 32
+  outcomes:
+  - id: CLD-02.O1
+    statement: Design a multi-account cloud landing zone with identity, network, logging, and guardrail
+      boundaries.
+  - id: CLD-02.O2
+    statement: Implement policy as code, workload identity, and centralized detection, then test misconfiguration
+      response.
+  - id: CLD-02.O3
+    statement: Threat-model a cloud-native workload and prioritize controls by expected risk reduction.
+  assessment: Landing-zone lab; policy tests; threat model.
+  sources:
+  - N33
+  - N05
+  - B16
+  safety:
+    isolation: recommended
+    risk: low
+  artifacts:
+    docs: []
+    labs: []
+    assessments: []
+  last_reviewed: null
+  reviewer: null
+- id: K8S-01
+  title: Kubernetes Security
+  level: L3
+  type: module
+  tracks:
+  - seceng
+  - offsec
+  - defense
+  status: planned
+  validation_status: unvalidated
+  prerequisites:
+  - CNT-01
+  - CLD-01
+  prerequisite_note: null
+  effort_hours:
+    reading: 9
+    practice: 15
+    assessment: 4
+    total: 28
+  outcomes:
+  - id: K8S-01.O1
+    statement: Explain control-plane security, admission control, RBAC, network policy, secrets, and runtime
+      isolation.
+  - id: K8S-01.O2
+    statement: Harden a lab cluster and detect a simulated compromise using audit logs and runtime telemetry.
+  - id: K8S-01.O3
+    statement: Evaluate multi-tenancy and supply-chain risks for a Kubernetes platform.
+  assessment: Cluster-hardening lab; audit-log detection.
+  sources:
+  - T10
+  - T11
+  - N12
+  safety:
+    isolation: required
+    risk: moderate
+  artifacts:
+    docs: []
+    labs: []
+    assessments: []
+  last_reviewed: null
+  reviewer: null
+- id: LOG-02
+  title: Detection Engineering II and SIEM
+  level: L3
+  type: module
+  tracks:
+  - defense
+  - research
+  status: planned
+  validation_status: unvalidated
+  prerequisites:
+  - LOG-01
+  - NET-03
+  prerequisite_note: null
+  effort_hours:
+    reading: 10
+    practice: 18
+    assessment: 4
+    total: 32
+  outcomes:
+  - id: LOG-02.O1
+    statement: Design detection as code with version control, unit tests, staging, and rollback.
+  - id: LOG-02.O2
+    statement: Build a SIEM pipeline and implement correlation or behavioral analytics on synthetic data.
+  - id: LOG-02.O3
+    statement: Measure detection quality and reduce alert fatigue using precision, recall, and analyst-cost
+      metrics.
+  assessment: Detection-as-code repo; SIEM lab; quality metrics.
+  sources:
+  - T01
+  - M01
+  - M02
+  - N10
+  safety:
+    isolation: recommended
+    risk: low
+  artifacts:
+    docs: []
+    labs: []
+    assessments: []
+  last_reviewed: null
+  reviewer: null
+- id: IR-02
+  title: Incident Response and Crisis Management
+  level: L3
+  type: module
+  tracks:
+  - defense
+  status: planned
+  validation_status: unvalidated
+  prerequisites:
+  - IR-01
+  - LOG-02
+  prerequisite_note: null
+  effort_hours:
+    reading: 9
+    practice: 15
+    assessment: 4
+    total: 28
+  outcomes:
+  - id: IR-02.O1
+    statement: Lead a multi-team incident with escalation, communication, and legal/privacy coordination.
+  - id: IR-02.O2
+    statement: Run a ransomware tabletop and produce a decision log with authorities, trade-offs, and
+      timing.
+  - id: IR-02.O3
+    statement: Evaluate incident-response readiness using maturity metrics and a remediation roadmap.
+  assessment: Crisis simulation; decision log; readiness assessment.
+  sources:
+  - N03
+  - N15
+  - N01
+  safety:
+    isolation: recommended
+    risk: low
+  artifacts:
+    docs: []
+    labs: []
+    assessments: []
+  last_reviewed: null
+  reviewer: null
+- id: FOR-01
+  title: Digital Forensics
+  level: L3
+  type: module
+  tracks:
+  - defense
+  - research
+  status: planned
+  validation_status: unvalidated
+  prerequisites:
+  - SYS-03
+  - SYS-04
+  - IR-01
+  prerequisite_note: null
+  effort_hours:
+    reading: 10
+    practice: 18
+    assessment: 4
+    total: 32
+  outcomes:
+  - id: FOR-01.O1
+    statement: Explain forensic process, evidence integrity, chain of custody, and order of volatility.
+  - id: FOR-01.O2
+    statement: Acquire and analyze disk, memory, and log artifacts from a lab image and produce a correlated
+      timeline.
+  - id: FOR-01.O3
+    statement: Defend findings under peer review and state the limitations of the analysis.
+  assessment: Acquisition lab; timeline; peer review.
+  sources:
+  - N14
+  - N28
+  - B08
+  safety:
+    isolation: required
+    risk: moderate
+  artifacts:
+    docs: []
+    labs: []
+    assessments: []
+  last_reviewed: null
+  reviewer: null
+- id: TI-01
+  title: Threat Intelligence
+  level: L3
+  type: module
+  tracks:
+  - offsec
+  - defense
+  status: planned
+  validation_status: unvalidated
+  prerequisites:
+  - LOG-01
+  - NET-01
+  prerequisite_note: null
+  effort_hours:
+    reading: 8
+    practice: 12
+    assessment: 2
+    total: 22
+  outcomes:
+  - id: TI-01.O1
+    statement: Explain the intelligence cycle, sourcing, confidence language, and structured analytic
+      techniques.
+  - id: TI-01.O2
+    statement: Produce a threat-intelligence report with ATT&CK mapping and validated indicators.
+  - id: TI-01.O3
+    statement: Evaluate intelligence quality, bias, and source reliability using a documented rubric.
+  assessment: Intelligence report; source evaluation.
+  sources:
+  - N29
+  - M01
+  - C03
+  safety:
+    isolation: none
+    risk: low
+  artifacts:
+    docs: []
+    labs: []
+    assessments: []
+  last_reviewed: null
+  reviewer: null
+- id: CRY-02
+  title: Applied Cryptography Engineering
+  level: L3
+  type: module
+  tracks:
+  - seceng
+  - appsec
+  - research
+  status: planned
+  validation_status: unvalidated
+  prerequisites:
+  - CRY-01
+  - PRG-01
+  prerequisite_note: null
+  effort_hours:
+    reading: 10
+    practice: 14
+    assessment: 4
+    total: 28
+  outcomes:
+  - id: CRY-02.O1
+    statement: Explain key management, protocol composition, side channels, and post-quantum migration.
+  - id: CRY-02.O2
+    statement: Implement a secure storage or messaging design with vetted primitives and test misuse cases.
+  - id: CRY-02.O3
+    statement: Assess a system's cryptographic agility and produce a prioritized PQC migration plan.
+  assessment: Secure-design lab; misuse tests; PQC plan.
+  sources:
+  - N16
+  - N17
+  - N18
+  - N19
+  - N20
+  - N36
+  safety:
+    isolation: recommended
+    risk: low
+  artifacts:
+    docs: []
+    labs: []
+    assessments: []
+  last_reviewed: null
+  reviewer: null
+- id: SCS-01
+  title: Software Supply Chain Security
+  level: L3
+  type: module
+  tracks:
+  - seceng
+  - appsec
+  - offsec
+  status: planned
+  validation_status: unvalidated
+  prerequisites:
+  - GIT-01
+  - APP-01
+  - CNT-01
+  prerequisite_note: null
+  effort_hours:
+    reading: 8
+    practice: 13
+    assessment: 3
+    total: 24
+  outcomes:
+  - id: SCS-01.O1
+    statement: Explain provenance, SBOMs, artifact signing, reproducible builds, and dependency-confusion
+      attacks.
+  - id: SCS-01.O2
+    statement: Implement SLSA-aligned provenance and verification in a CI pipeline.
+  - id: SCS-01.O3
+    statement: Analyze a supply-chain incident and map controls to each stage of the attack.
+  assessment: Provenance pipeline; incident analysis.
+  sources:
+  - P01
+  - C04
+  - P02
+  - P03
+  - P04
+  safety:
+    isolation: recommended
+    risk: low
+  artifacts:
+    docs: []
+    labs: []
+    assessments: []
+  last_reviewed: null
+  reviewer: null
+- id: AI-01
+  title: AI and LLM Security
+  level: L3
+  type: module
+  tracks:
+  - appsec
+  - seceng
+  - defense
+  - research
+  status: planned
+  validation_status: unvalidated
+  prerequisites:
+  - APP-01
+  - CLD-01
+  prerequisite_note: null
+  effort_hours:
+    reading: 7
+    practice: 13
+    assessment: 2
+    total: 22
+  outcomes:
+  - id: AI-01.O1
+    statement: Explain prompt injection, data poisoning, model extraction, excessive agency, and retrieval-augmented-generation
+      risks.
+  - id: AI-01.O2
+    statement: Test an LLM application for prompt injection and insecure output handling, then implement
+      and verify mitigations.
+  - id: AI-01.O3
+    statement: Threat-model an AI system using MITRE ATLAS and the OWASP LLM Top 10.
+  assessment: LLM red-team lab; ATLAS threat model.
+  sources:
+  - O05
+  - M03
+  - N21
+  safety:
+    isolation: recommended
+    risk: moderate
+  artifacts:
+    docs: []
+    labs: []
+    assessments: []
+  last_reviewed: null
+  reviewer: null
+- id: OFF-01
+  title: Penetration Testing Methodology
+  level: L3
+  type: module
+  tracks:
+  - offsec
+  - defense
+  status: planned
+  validation_status: unvalidated
+  prerequisites:
+  - WEB-01
+  - NET-03
+  - VUL-01
+  prerequisite_note: null
+  effort_hours:
+    reading: 10
+    practice: 18
+    assessment: 4
+    total: 32
+  outcomes:
+  - id: OFF-01.O1
+    statement: Plan an authorized engagement with scope, rules of engagement, communication, and reporting
+      requirements.
+  - id: OFF-01.O2
+    statement: Execute a full-scope assessment against a lab environment and produce a professional report.
+  - id: OFF-01.O3
+    statement: Rank findings by exploitability and business impact and recommend verifiable fixes.
+  assessment: Engagement plan; full lab assessment report.
+  sources:
+  - N11
+  - O03
+  - U01
+  safety:
+    isolation: required
+    risk: moderate
+  artifacts:
+    docs: []
+    labs: []
+    assessments: []
+  last_reviewed: null
+  reviewer: null
+- id: MOB-01
+  title: Mobile Security
+  level: L3
+  type: elective
+  tracks:
+  - appsec
+  - offsec
+  - elective
+  status: planned
+  validation_status: unvalidated
+  prerequisites:
+  - APP-01
+  - NET-03
+  prerequisite_note: null
+  effort_hours:
+    reading: 6
+    practice: 10
+    assessment: 2
+    total: 18
+  outcomes:
+  - id: MOB-01.O1
+    statement: Explain mobile sandboxing, inter-process communication, secure storage, and platform hardening.
+  - id: MOB-01.O2
+    statement: Test a lab mobile application for insecure storage, transport, and authentication, then
+      remediate the findings.
+  - id: MOB-01.O3
+    statement: Map findings to OWASP MASVS and the OWASP Mobile Top 10.
+  assessment: Mobile lab; MASVS mapping.
+  sources:
+  - O07
+  - O02
+  safety:
+    isolation: none
+    risk: low
+  artifacts:
+    docs: []
+    labs: []
+    assessments: []
+  last_reviewed: null
+  reviewer: null
+- id: ICS-01
+  title: OT/ICS Security
+  level: L3
+  type: elective
+  tracks:
+  - seceng
+  - defense
+  - elective
+  status: planned
+  validation_status: unvalidated
+  prerequisites:
+  - NET-03
+  - SYS-02
+  prerequisite_note: null
+  effort_hours:
+    reading: 6
+    practice: 10
+    assessment: 2
+    total: 18
+  outcomes:
+  - id: ICS-01.O1
+    statement: Explain the Purdue model, OT protocols, safety constraints, and IT/OT convergence risks.
+  - id: ICS-01.O2
+    statement: Analyze a simulated OT network and propose segmentation and monitoring controls that respect
+      safety limits.
+  - id: ICS-01.O3
+    statement: Evaluate security/safety trade-offs for a proposed OT change.
+  assessment: OT network analysis; safety trade-off memo.
+  sources:
+  - N13
+  - N26
+  safety:
+    isolation: required
+    risk: high
+  artifacts:
+    docs: []
+    labs: []
+    assessments: []
+  last_reviewed: null
+  reviewer: null
+- id: RED-01
+  title: Red Team Operations and Adversary Emulation
+  level: L4
+  type: module
+  tracks:
+  - offsec
+  status: planned
+  validation_status: unvalidated
+  prerequisites:
+  - OFF-01
+  - AD-01
+  - TI-01
+  - EXP-01
+  prerequisite_note: null
+  effort_hours:
+    reading: 12
+    practice: 24
+    assessment: 4
+    total: 40
+  outcomes:
+  - id: RED-01.O1
+    statement: Design an adversary-emulation plan mapped to ATT&CK and explicit business objectives.
+  - id: RED-01.O2
+    statement: Execute a multi-stage authorized campaign in a lab and document TTPs, evidence, and operational
+      security.
+  - id: RED-01.O3
+    statement: Evaluate detection coverage and deliver an executive debrief with prioritized recommendations.
+  assessment: Emulation plan; lab campaign; executive debrief.
+  sources:
+  - M01
+  - N11
+  - M02
+  safety:
+    isolation: required
+    risk: high
+  artifacts:
+    docs: []
+    labs: []
+    assessments: []
+  last_reviewed: null
+  reviewer: null
+- id: PUR-01
+  title: Purple Team and Control Validation
+  level: L4
+  type: module
+  tracks:
+  - defense
+  - offsec
+  status: planned
+  validation_status: unvalidated
+  prerequisites:
+  - OFF-01
+  - LOG-02
+  prerequisite_note: null
+  effort_hours:
+    reading: 8
+    practice: 16
+    assessment: 4
+    total: 28
+  outcomes:
+  - id: PUR-01.O1
+    statement: Design control-validation tests with expected telemetry and pass/fail criteria.
+  - id: PUR-01.O2
+    statement: Run an iterative purple-team cycle and measure detection improvement across iterations.
+  - id: PUR-01.O3
+    statement: Communicate residual risk to technical and executive audiences with evidence.
+  assessment: Control-validation suite; iteration metrics; risk brief.
+  sources:
+  - M01
+  - M02
+  - T01
+  safety:
+    isolation: required
+    risk: moderate
+  artifacts:
+    docs: []
+    labs: []
+    assessments: []
+  last_reviewed: null
+  reviewer: null
+- id: ARC-01
+  title: Security Architecture and Enterprise Engineering
+  level: L4
+  type: module
+  tracks:
+  - seceng
+  - appsec
+  status: planned
+  validation_status: unvalidated
+  prerequisites:
+  - RSK-01
+  - SEC-01
+  - CLD-02
+  prerequisite_note: null
+  effort_hours:
+    reading: 10
+    practice: 18
+    assessment: 4
+    total: 32
+  outcomes:
+  - id: ARC-01.O1
+    statement: Produce a reference architecture with trust zones, control planes, data flows, and failure
+      modes.
+  - id: ARC-01.O2
+    statement: Evaluate build-versus-buy and centralization trade-offs in a written decision record.
+  - id: ARC-01.O3
+    statement: Lead an architecture review and resolve conflicting security, reliability, and delivery
+      requirements.
+  assessment: Reference architecture; decision record; review leadership.
+  sources:
+  - N07
+  - N05
+  - N01
+  safety:
+    isolation: none
+    risk: low
+  artifacts:
+    docs: []
+    labs: []
+    assessments: []
+  last_reviewed: null
+  reviewer: null
+- id: PDE-01
+  title: Product Security Engineering and SSDLC
+  level: L4
+  type: module
+  tracks:
+  - appsec
+  - seceng
+  status: planned
+  validation_status: unvalidated
+  prerequisites:
+  - APP-01
+  - SCS-01
+  - SEC-01
+  prerequisite_note: null
+  effort_hours:
+    reading: 9
+    practice: 15
+    assessment: 4
+    total: 28
+  outcomes:
+  - id: PDE-01.O1
+    statement: Design an SSDLC with threat modeling, security requirements, gates, and metrics.
+  - id: PDE-01.O2
+    statement: Implement a security-champion program and measure developer adoption and enablement.
+  - id: PDE-01.O3
+    statement: Assess a product-security program against NIST SSDF and OWASP SAMM.
+  assessment: SSDLC design; program assessment.
+  sources:
+  - N06
+  - O06
+  - O02
+  safety:
+    isolation: none
+    risk: low
+  artifacts:
+    docs: []
+    labs: []
+    assessments: []
+  last_reviewed: null
+  reviewer: null
+- id: SRE-01
+  title: Security Reliability Engineering
+  level: L4
+  type: module
+  tracks:
+  - seceng
+  - defense
+  status: planned
+  validation_status: unvalidated
+  prerequisites:
+  - LOG-02
+  - CLD-02
+  - K8S-01
+  prerequisite_note: null
+  effort_hours:
+    reading: 8
+    practice: 13
+    assessment: 3
+    total: 24
+  outcomes:
+  - id: SRE-01.O1
+    statement: Explain SLOs, error budgets, incident command, and the reliability of security controls.
+  - id: SRE-01.O2
+    statement: Build monitoring and alerting for a security-critical service and run a game day.
+  - id: SRE-01.O3
+    statement: Balance security, reliability, and delivery velocity using evidence and explicit risk acceptance.
+  assessment: Monitoring lab; game day; trade-off analysis.
+  sources:
+  - B15
+  - N24
+  - B16
+  safety:
+    isolation: none
+    risk: low
+  artifacts:
+    docs: []
+    labs: []
+    assessments: []
+  last_reviewed: null
+  reviewer: null
+- id: FOR-02
+  title: Advanced Forensics and Memory Analysis
+  level: L4
+  type: module
+  tracks:
+  - defense
+  - research
+  status: planned
+  validation_status: unvalidated
+  prerequisites:
+  - FOR-01
+  - REV-01
+  prerequisite_note: null
+  effort_hours:
+    reading: 9
+    practice: 15
+    assessment: 4
+    total: 28
+  outcomes:
+  - id: FOR-02.O1
+    statement: Explain memory forensics, artifact correlation, and anti-forensic techniques.
+  - id: FOR-02.O2
+    statement: Analyze a memory image and reconstruct a multi-stage intrusion.
+  - id: FOR-02.O3
+    statement: Critique a forensic methodology and present findings in a testimony-style review.
+  assessment: Memory-analysis lab; testimony-style review.
+  sources:
+  - B08
+  - T07
+  - N14
+  safety:
+    isolation: required
+    risk: moderate
+  artifacts:
+    docs: []
+    labs: []
+    assessments: []
+  last_reviewed: null
+  reviewer: null
+- id: MAL-02
+  title: Malware Research and Triage Automation
+  level: L4
+  type: module
+  tracks:
+  - defense
+  - offsec
+  - research
+  status: planned
+  validation_status: unvalidated
+  prerequisites:
+  - MAL-01
+  - REV-01
+  prerequisite_note: null
+  effort_hours:
+    reading: 9
+    practice: 19
+    assessment: 4
+    total: 32
+  outcomes:
+  - id: MAL-02.O1
+    statement: Build an automated triage pipeline for synthetic malware samples.
+  - id: MAL-02.O2
+    statement: Reverse a packed or obfuscated sample in a safe lab and extract configuration and indicators.
+  - id: MAL-02.O3
+    statement: Write a research-grade malware report with methodology, limitations, and reproducible artifacts.
+  assessment: Triage pipeline; sample report.
+  sources:
+  - B07
+  - T02
+  - T03
+  safety:
+    isolation: required
+    risk: high
+  artifacts:
+    docs: []
+    labs: []
+    assessments: []
+  last_reviewed: null
+  reviewer: null
+- id: GOV-01
+  title: Governance, Compliance, and Audit
+  level: L4
+  type: module
+  tracks:
+  - seceng
+  - appsec
+  - defense
+  - research
+  status: planned
+  validation_status: unvalidated
+  prerequisites:
+  - RSK-01
+  prerequisite_note: null
+  effort_hours:
+    reading: 10
+    practice: 12
+    assessment: 4
+    total: 26
+  outcomes:
+  - id: GOV-01.O1
+    statement: Explain control frameworks, audit evidence, regulatory mapping, and assurance boundaries.
+  - id: GOV-01.O2
+    statement: Build a control matrix mapped to CSF 2.0, SP 800-53, and ISO/IEC 27001:2022.
+  - id: GOV-01.O3
+    statement: Conduct a mock audit, defend findings, and write a management response.
+  assessment: Control matrix; mock audit.
+  sources:
+  - N01
+  - N02
+  - I01
+  - C05
+  safety:
+    isolation: none
+    risk: low
+  artifacts:
+    docs: []
+    labs: []
+    assessments: []
+  last_reviewed: null
+  reviewer: null
+- id: PRI-01
+  title: Privacy Engineering and Data Protection
+  level: L4
+  type: module
+  tracks:
+  - appsec
+  - seceng
+  - research
+  status: planned
+  validation_status: unvalidated
+  prerequisites:
+  - GOV-01
+  - DAT-01
+  - CRY-02
+  prerequisite_note: null
+  effort_hours:
+    reading: 8
+    practice: 11
+    assessment: 3
+    total: 22
+  outcomes:
+  - id: PRI-01.O1
+    statement: Explain data minimization, purpose limitation, consent, DPIAs, and de-identification.
+  - id: PRI-01.O2
+    statement: Conduct a DPIA and design privacy-preserving controls for a data-processing system.
+  - id: PRI-01.O3
+    statement: Evaluate re-identification risk and the trade-off between privacy and utility.
+  assessment: DPIA; privacy design review.
+  sources:
+  - N22
+  - N01
+  - A16
+  safety:
+    isolation: none
+    risk: low
+  artifacts:
+    docs: []
+    labs: []
+    assessments: []
+  last_reviewed: null
+  reviewer: null
+- id: HW-01
+  title: Hardware and Firmware Security
+  level: L4
+  type: elective
+  tracks:
+  - offsec
+  - seceng
+  - elective
+  status: planned
+  validation_status: unvalidated
+  prerequisites:
+  - SYS-01
+  - REV-01
+  prerequisite_note: null
+  effort_hours:
+    reading: 8
+    practice: 12
+    assessment: 2
+    total: 22
+  outcomes:
+  - id: HW-01.O1
+    statement: Explain the boot chain, secure boot, TPM, debug interfaces, and firmware-update trust.
+  - id: HW-01.O2
+    statement: Analyze a firmware image and identify insecure update or verification mechanisms.
+  - id: HW-01.O3
+    statement: Evaluate a hardware threat model and supply-chain controls.
+  assessment: Firmware-analysis lab; threat model.
+  sources:
+  - N32
+  - B06
+  - N07
+  safety:
+    isolation: recommended
+    risk: moderate
+  artifacts:
+    docs: []
+    labs: []
+    assessments: []
+  last_reviewed: null
+  reviewer: null
+- id: TCH-01
+  title: Technical Teaching and Curriculum Design
+  level: L4
+  type: module
+  tracks:
+  - teaching
+  - research
+  status: planned
+  validation_status: unvalidated
+  prerequisites:
+  - ORI-03
+  - SEC-01
+  prerequisite_note: Plus two completed L3 modules in different domains; teaching readiness is assessed
+    before enrollment.
+  effort_hours:
+    reading: 6
+    practice: 12
+    assessment: 6
+    total: 24
+  outcomes:
+  - id: TCH-01.O1
+    statement: Design a 90-minute lesson with measurable objectives, worked examples, and retrieval practice.
+  - id: TCH-01.O2
+    statement: Deliver a lesson and a lab briefing, incorporate peer feedback, and revise the materials.
+  - id: TCH-01.O3
+    statement: Design an assessment with a rubric and demonstrate inter-rater consistency on two sample
+      answers.
+  assessment: Lesson plan; observed teaching; assessment design.
+  sources:
+  - A19
+  - A18
+  - N23
+  safety:
+    isolation: none
+    risk: low
+  artifacts:
+    docs: []
+    labs: []
+    assessments: []
+  last_reviewed: null
+  reviewer: null
+- id: RES-01
+  title: Research Methods in Security
+  level: L5
+  type: module
+  tracks:
+  - research
+  status: drafted
+  validation_status: structural
+  prerequisites:
+  - ORI-03
+  - RSK-01
+  prerequisite_note: null
+  effort_hours:
+    reading: 8
+    practice: 12
+    assessment: 2
+    total: 22
+  outcomes:
+  - id: RES-01.O1
+    statement: Formulate a research question with scope, threat model, and falsifiable hypotheses.
+  - id: RES-01.O2
+    statement: Design a study with controls, data-collection procedures, and a threats-to-validity analysis.
+  - id: RES-01.O3
+    statement: Write a literature-review protocol with inclusion criteria and a reproducible search log.
+  assessment: Research proposal; literature protocol.
+  sources:
+  - A19
+  - A18
+  - N11
+  - R01
+  - R02
+  - R03
+  safety:
+    isolation: none
+    risk: low
+  artifacts:
+    docs:
+    - research/README.md
+    - research/01-literature-search-and-source-evaluation.md
+    - research/02-research-questions-hypotheses-and-threat-models.md
+    labs:
+    - research/projects/01-structured-literature-review.md
+    assessments:
+    - assessments/research/assessment.md
+    - assessments/research/answer-key.md
+  last_reviewed: '2026-10-19'
+  reviewer: null
+  reviewer: null
+- id: RES-02
+  title: Empirical Security Measurement and Statistics
+  level: L5
+  type: module
+  tracks:
+  - research
+  status: drafted
+  validation_status: structural
+  prerequisites:
+  - RES-01
+  - DAT-01
+  - PRG-01
+  prerequisite_note: null
+  effort_hours:
+    reading: 10
+    practice: 14
+    assessment: 4
+    total: 28
+  outcomes:
+  - id: RES-02.O1
+    statement: Select and justify sampling, power, and statistical tests for a security dataset.
+  - id: RES-02.O2
+    statement: Analyze a public security dataset and report effect sizes with uncertainty.
+  - id: RES-02.O3
+    statement: Identify confounding, selection bias, and p-hacking risks in a published study.
+  assessment: Dataset analysis; published-study critique.
+  sources:
+  - A17
+  - C02
+  - C03
+  - R02
+  - R03
+  - R04
+  - R05
+  - R06
+  - R07
+  - R08
+  - R09
+  - R12
+  safety:
+    isolation: none
+    risk: low
+  artifacts:
+    docs:
+    - research/03-experimental-design-baselines-and-sampling.md
+    - research/04-measurement-statistics-and-uncertainty.md
+    - research/05-reproducibility-and-replication.md
+    labs:
+    - research/projects/02-replication-study.md
+    - research/projects/03-controlled-experiment.md
+    assessments:
+    - assessments/research/assessment.md
+    - assessments/research/answer-key.md
+  last_reviewed: '2026-10-19'
+  reviewer: null
+  reviewer: null
+- id: RES-03
+  title: Vulnerability Discovery Research
+  level: L5
+  type: module
+  tracks:
+  - research
+  - offsec
+  status: planned
+  validation_status: unvalidated
+  prerequisites:
+  - RES-01
+  - VUL-01
+  - PRG-01
+  prerequisite_note: null
+  effort_hours:
+    reading: 10
+    practice: 18
+    assessment: 4
+    total: 32
+  outcomes:
+  - id: RES-03.O1
+    statement: Compare fuzzing, static analysis, symbolic execution, and manual review for a target class.
+  - id: RES-03.O2
+    statement: Build a coverage-guided fuzzing campaign with corpus management, triage, and reproduction.
+  - id: RES-03.O3
+    statement: Evaluate reproducibility and disclosure implications of a discovered vulnerability.
+  assessment: Fuzzing campaign; research memo.
+  sources:
+  - A07
+  - A08
+  - A17
+  - T03
+  - R02
+  - R03
+  - R10
+  safety:
+    isolation: recommended
+    risk: moderate
+  artifacts:
+    docs:
+    - research/08-domain-research-designs.md
+    labs: []
+    assessments: []
+  last_reviewed: null
+  reviewer: null
+- id: RES-04
+  title: Usable Security and Human Factors
+  level: L5
+  type: module
+  tracks:
+  - research
+  status: planned
+  validation_status: unvalidated
+  prerequisites:
+  - RES-01
+  prerequisite_note: null
+  effort_hours:
+    reading: 7
+    practice: 11
+    assessment: 2
+    total: 20
+  outcomes:
+  - id: RES-04.O1
+    statement: Explain mental models, friction, security fatigue, and accessibility in security interfaces.
+  - id: RES-04.O2
+    statement: Design and pilot a user study with informed consent and a pre-registered analysis plan.
+  - id: RES-04.O3
+    statement: Evaluate a usability-security trade-off using quantitative and qualitative evidence.
+  assessment: Pilot study; ethics documentation.
+  sources:
+  - A13
+  - A15
+  - N04
+  - R02
+  - R03
+  - R15
+  safety:
+    isolation: none
+    risk: low
+  artifacts:
+    docs:
+    - research/08-domain-research-designs.md
+    labs: []
+    assessments: []
+  last_reviewed: null
+  reviewer: null
+- id: RES-05
+  title: Formal Methods and Program Analysis
+  level: L5
+  type: module
+  tracks:
+  - research
+  status: planned
+  validation_status: unvalidated
+  prerequisites:
+  - RES-01
+  - PRG-01
+  - CRY-02
+  prerequisite_note: null
+  effort_hours:
+    reading: 10
+    practice: 18
+    assessment: 4
+    total: 32
+  outcomes:
+  - id: RES-05.O1
+    statement: Explain invariants, model checking, abstract interpretation, and type systems.
+  - id: RES-05.O2
+    statement: Model a security protocol and verify a property with a model checker.
+  - id: RES-05.O3
+    statement: Evaluate the scalability, assumptions, and false-confidence risks of a formal analysis.
+  assessment: Model-checking lab; analysis critique.
+  sources:
+  - T05
+  - T06
+  - A09
+  - R02
+  - R03
+  safety:
+    isolation: none
+    risk: low
+  artifacts:
+    docs:
+    - research/08-domain-research-designs.md
+    labs: []
+    assessments: []
+  last_reviewed: null
+  reviewer: null
+- id: RES-06
+  title: Ethics, Disclosure, and Open Science
+  level: L5
+  type: module
+  tracks:
+  - research
+  - teaching
+  status: drafted
+  validation_status: structural
+  prerequisites:
+  - RES-01
+  prerequisite_note: GOV-01 is recommended but not required.
+  effort_hours:
+    reading: 6
+    practice: 8
+    assessment: 2
+    total: 16
+  outcomes:
+  - id: RES-06.O1
+    statement: Apply ethical frameworks and legal constraints to a security research scenario.
+  - id: RES-06.O2
+    statement: Write a disclosure plan, ethics application, and data-management plan.
+  - id: RES-06.O3
+    statement: Evaluate reproducibility, data sharing, and dual-use risks of a proposed study.
+  assessment: Ethics/disclosure dossier.
+  sources:
+  - A18
+  - C06
+  - N11
+  - R10
+  - R11
+  - R14
+  - R15
+  safety:
+    isolation: none
+    risk: low
+  artifacts:
+    docs:
+    - research/06-ethics-disclosure-and-open-science.md
+    labs:
+    - research/projects/02-replication-study.md
+    - research/projects/03-controlled-experiment.md
+    assessments:
+    - assessments/research/assessment.md
+    - assessments/research/answer-key.md
+  last_reviewed: '2026-10-19'
+  reviewer: null
+  reviewer: null
+- id: RES-07
+  title: Thesis Proposal and Defense
+  level: L5
+  type: module
+  tracks:
+  - research
+  status: drafted
+  validation_status: structural
+  prerequisites:
+  - RES-01
+  - RES-02
+  - RES-03
+  - RES-04
+  - RES-05
+  - RES-06
+  prerequisite_note: null
+  effort_hours:
+    reading: 8
+    practice: 16
+    assessment: 6
+    total: 30
+  outcomes:
+  - id: RES-07.O1
+    statement: Produce a thesis proposal with question, related work, method, ethics, and timeline.
+  - id: RES-07.O2
+    statement: Defend the proposal before a review panel and incorporate feedback into a revised plan.
+  - id: RES-07.O3
+    statement: Pre-register the analysis and define success, failure, and stopping criteria.
+  assessment: Proposal defense; pre-registration.
+  sources:
+  - A19
+  - A18
+  - N11
+  - R01
+  - R03
+  - R06
+  - R13
+  - R14
+  safety:
+    isolation: none
+    risk: low
+  artifacts:
+    docs:
+    - research/07-scientific-writing-and-publication.md
+    - research/projects/04-thesis-proposal-and-paper.md
+    labs:
+    - research/projects/04-thesis-proposal-and-paper.md
+    assessments:
+    - assessments/research/assessment.md
+    - assessments/research/answer-key.md
+  last_reviewed: '2026-10-19'
+  reviewer: null
+  reviewer: null
+- id: CAP-01
+  title: Security Engineering Platform
+  level: L5
+  type: capstone
+  tracks:
+  - seceng
+  - capstone
+  status: planned
+  validation_status: unvalidated
+  prerequisites:
+  - ARC-01
+  - SRE-01
+  - GOV-01
+  prerequisite_note: null
+  effort_hours:
+    reading: 4
+    practice: 48
+    assessment: 8
+    total: 60
+  outcomes:
+  - id: CAP-01.O1
+    statement: Harden a multi-service platform across identity, network, data, logging, and CI/CD.
+  - id: CAP-01.O2
+    statement: Validate controls with automated tests and at least one adversarial scenario.
+  - id: CAP-01.O3
+    statement: Produce architecture decision records and an executive risk summary.
+  assessment: Capstone rubric plus panel defense.
+  sources:
+  - N07
+  - N05
+  - N01
+  safety:
+    isolation: none
+    risk: low
+  artifacts:
+    docs: []
+    labs: []
+    assessments: []
+  last_reviewed: null
+  reviewer: null
+- id: CAP-02
+  title: Application Security Program
+  level: L5
+  type: capstone
+  tracks:
+  - appsec
+  - capstone
+  status: planned
+  validation_status: unvalidated
+  prerequisites:
+  - PDE-01
+  - API-01
+  - SCS-01
+  prerequisite_note: null
+  effort_hours:
+    reading: 4
+    practice: 48
+    assessment: 8
+    total: 60
+  outcomes:
+  - id: CAP-02.O1
+    statement: Build an SSDLC with threat models, security requirements, and CI gates for a real codebase.
+  - id: CAP-02.O2
+    statement: Reduce measured vulnerability density and prove the change with before/after data.
+  - id: CAP-02.O3
+    statement: Produce a program roadmap with metrics, developer enablement, and governance.
+  assessment: Capstone rubric plus panel defense.
+  sources:
+  - N06
+  - O06
+  - O02
+  safety:
+    isolation: none
+    risk: low
+  artifacts:
+    docs: []
+    labs: []
+    assessments: []
+  last_reviewed: null
+  reviewer: null
+- id: CAP-03
+  title: Adversary Emulation and Detection Research
+  level: L5
+  type: capstone
+  tracks:
+  - offsec
+  - defense
+  - capstone
+  status: planned
+  validation_status: unvalidated
+  prerequisites:
+  - RED-01
+  - PUR-01
+  - TI-01
+  prerequisite_note: null
+  effort_hours:
+    reading: 4
+    practice: 64
+    assessment: 12
+    total: 80
+  outcomes:
+  - id: CAP-03.O1
+    statement: Design an adversary-emulation campaign with explicit hypotheses about detection coverage.
+  - id: CAP-03.O2
+    statement: Execute the campaign in an isolated lab and collect reproducible evidence.
+  - id: CAP-03.O3
+    statement: Publish a research-style report with limitations and defensive recommendations.
+  assessment: Capstone rubric plus research report and panel defense.
+  sources:
+  - M01
+  - N11
+  - A18
+  safety:
+    isolation: required
+    risk: high
+  artifacts:
+    docs: []
+    labs: []
+    assessments: []
+  last_reviewed: null
+  reviewer: null
+- id: CAP-04
+  title: Incident Response and Forensics Case
+  level: L5
+  type: capstone
+  tracks:
+  - defense
+  - capstone
+  status: planned
+  validation_status: unvalidated
+  prerequisites:
+  - IR-02
+  - FOR-01
+  - MAL-01
+  - LOG-02
+  prerequisite_note: null
+  effort_hours:
+    reading: 4
+    practice: 48
+    assessment: 8
+    total: 60
+  outcomes:
+  - id: CAP-04.O1
+    statement: Detect, contain, eradicate, and recover from a synthetic intrusion.
+  - id: CAP-04.O2
+    statement: Produce a forensic timeline and an evidence package with chain of custody.
+  - id: CAP-04.O3
+    statement: Deliver an after-action review and a prioritized control-improvement plan.
+  assessment: Capstone rubric plus evidence package and panel defense.
+  sources:
+  - N03
+  - N14
+  - M01
+  safety:
+    isolation: required
+    risk: moderate
+  artifacts:
+    docs: []
+    labs: []
+    assessments: []
+  last_reviewed: null
+  reviewer: null
+- id: CAP-05
+  title: Research Thesis
+  level: L5
+  type: capstone
+  tracks:
+  - research
+  - capstone
+  status: planned
+  validation_status: unvalidated
+  prerequisites:
+  - RES-07
+  prerequisite_note: null
+  effort_hours:
+    reading: 6
+    practice: 100
+    assessment: 14
+    total: 120
+  outcomes:
+  - id: CAP-05.O1
+    statement: Execute an approved research plan with reproducible code, data, and documentation.
+  - id: CAP-05.O2
+    statement: Analyze results with appropriate statistics and a candid limitations section.
+  - id: CAP-05.O3
+    statement: Defend the thesis and produce a publishable paper or equivalent artifact.
+  assessment: Thesis rubric, external-style review, and oral defense.
+  sources:
+  - A19
+  - A18
+  - N11
+  safety:
+    isolation: none
+    risk: low
+  artifacts:
+    docs:
+    - research/projects/04-thesis-proposal-and-paper.md
+    - research/projects/rubrics.md
+    labs:
+    - research/projects/04-thesis-proposal-and-paper.md
+    assessments:
+    - assessments/research/assessment.md
+    - assessments/research/answer-key.md
+  last_reviewed: null
+  reviewer: null

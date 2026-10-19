@@ -1,0 +1,7 @@
+# Documentation toolchain. Python 3.10+ is required by pymdown-extensions 12.x.
+mkdocs==1.6.1
+mkdocs-material==9.7.7
+pymdown-extensions==12.3
+PyYAML==6.0.3
+jsonschema==4.26.0
+pymarkdownlnt==0.9.41

@@ -1,0 +1,134 @@
+site_name: Cybersecurity Master Academy
+site_description: A source-grounded curriculum from systems fundamentals to research-level cybersecurity.
+site_author: Cybersecurity Master Academy
+docs_dir: docs
+site_dir: site
+use_directory_urls: true
+exclude_docs: |
+  **/answer-key.md
+  **/solution.md
+
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - content.code.copy
+    - search.suggest
+    - search.highlight
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+repo_url: https://github.com/metodiev/Cybersecurity
+repo_name: metodiev/Cybersecurity
+
+nav:
+  - Home: index.md
+  - Architecture:
+      - Course Map: COURSE_MAP.md
+      - Learning Paths: LEARNING_PATHS.md
+      - Curriculum Manifest: CURRICULUM_MANIFEST.md
+      - Research and Teaching: RESEARCH_STRAND.md
+      - Assumptions and Gaps: ASSUMPTIONS_AND_GAPS.md
+      - Dependency Graph: diagrams/dependency-graph.md
+      - References: REFERENCES.md
+      - Architecture Review: ARCHITECTURE_REVIEW.md
+  - Authoring:
+      - Tutorial Template: authoring-templates/tutorial.md
+      - Lab Template: authoring-templates/lab.md
+      - Assessment Template: authoring-templates/assessment.md
+      - Research Paper Review Template: authoring-templates/research-paper-review.md
+      - Literature Matrix Template: authoring-templates/literature-matrix.md
+      - Experiment Plan Template: authoring-templates/experiment-plan.md
+      - Replication Report Template: authoring-templates/replication-report.md
+      - Publication Outline Template: authoring-templates/publication-outline.md
+      - Architecture Review Template: authoring-templates/architecture-review.md
+  - Foundations:
+      - SYS-01 Overview: tutorials/sys-01-computer-architecture/README.md
+      - SYS-01.1 Machine Model: tutorials/sys-01-computer-architecture/01-machine-model-and-execution.md
+      - SYS-01.2 Memory and Stack: tutorials/sys-01-computer-architecture/02-memory-layout-and-stack-frames.md
+      - SYS-01.3 Binary Anatomy: tutorials/sys-01-computer-architecture/03-binary-anatomy-and-calling-conventions.md
+      - SYS-01.4 Mitigations: tutorials/sys-01-computer-architecture/04-memory-safety-and-mitigations.md
+      - SYS-01 Lab: labs/sys-01-memory-and-binaries/lab.md
+      - SYS-01 Lab Rubric: labs/sys-01-memory-and-binaries/rubric.md
+      - SYS-01 Lab Reproducibility: labs/sys-01-memory-and-binaries/reproducibility.md
+      - SYS-01 Assessment: assessments/sys-01/assessment.md
+      - SYS-02 Overview: tutorials/sys-02-operating-systems/README.md
+      - SYS-02.1 Privilege Levels: tutorials/sys-02-operating-systems/01-privilege-levels-and-kernel-boundary.md
+      - SYS-02.2 Processes and Threads: tutorials/sys-02-operating-systems/02-processes-threads-and-scheduling.md
+      - SYS-02.3 Files and Permissions: tutorials/sys-02-operating-systems/03-files-permissions-and-access-control.md
+      - SYS-02.4 System Calls: tutorials/sys-02-operating-systems/04-system-calls-and-tracing.md
+      - SYS-02.5 Isolation: tutorials/sys-02-operating-systems/05-isolation-and-sandboxing.md
+      - SYS-02 Lab: labs/sys-02-syscalls-and-isolation/lab.md
+      - SYS-02 Lab Rubric: labs/sys-02-syscalls-and-isolation/rubric.md
+      - SYS-02 Lab Reproducibility: labs/sys-02-syscalls-and-isolation/reproducibility.md
+      - SYS-02 Assessment: assessments/sys-02/assessment.md
+  - Research:
+      - Research Track Overview: research/README.md
+      - Research 1 Literature Search: research/01-literature-search-and-source-evaluation.md
+      - Research 2 Questions and Threat Models: research/02-research-questions-hypotheses-and-threat-models.md
+      - Research 3 Experimental Design: research/03-experimental-design-baselines-and-sampling.md
+      - Research 4 Measurement and Statistics: research/04-measurement-statistics-and-uncertainty.md
+      - Research 5 Reproducibility: research/05-reproducibility-and-replication.md
+      - Research 6 Ethics and Disclosure: research/06-ethics-disclosure-and-open-science.md
+      - Research 7 Scientific Writing: research/07-scientific-writing-and-publication.md
+      - Research 8 Domain Designs: research/08-domain-research-designs.md
+      - Research Projects: research/projects/README.md
+      - P1 Literature Review: research/projects/01-structured-literature-review.md
+      - P2 Replication Study: research/projects/02-replication-study.md
+      - P3 Controlled Experiment: research/projects/03-controlled-experiment.md
+      - P4 Thesis and Paper: research/projects/04-thesis-proposal-and-paper.md
+      - Research Project Rubrics: research/projects/rubrics.md
+      - Research Portfolio Assessment: assessments/research/assessment.md
+  - Examples:
+      - Documentation Example: examples/documentation-example.md
+
+plugins:
+  - search:
+      lang: en
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - md_in_html
+  - meta
+  - tables
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+validation:
+  links:
+    not_found: warn
+    anchors: warn
+    absolute_links: warn
+    unrecognized_links: warn

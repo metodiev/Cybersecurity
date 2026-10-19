@@ -1,0 +1,27 @@
+{
+  "plugins": {
+    "md013": {
+      "enabled": false
+    },
+    "md024": {
+      "enabled": true,
+      "allow_different_nesting": true
+    },
+    "md033": {
+      "enabled": false
+    },
+    "md036": {
+      "enabled": false
+    },
+    "md059": {
+      "enabled": false
+    },
+    "md010": {
+      "enabled": false
+    },
+    "md029": {
+      "enabled": true,
+      "allow_extended_start_values": true
+    }
+  }
+}

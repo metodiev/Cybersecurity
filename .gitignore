@@ -1,0 +1,11 @@
+.venv/
+site/
+__pycache__/
+*.py[cod]
+.DS_Store
+*.dSYM/
+labs/sys-01-memory-and-binaries/starter/layout
+labs/sys-01-memory-and-binaries/starter/layout-nossp
+labs/sys-01-memory-and-binaries/starter/canary
+labs/sys-01-memory-and-binaries/starter/canary-nossp
+labs/sys-02-syscalls-and-isolation/evidence/

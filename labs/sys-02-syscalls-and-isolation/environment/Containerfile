@@ -1,0 +1,19 @@
+# Optional syscall-tracing environment. Namespace experiments may require a VM.
+# Build from the lab root:
+#   docker build -f environment/Containerfile -t sys02-lab:local .
+# The base tag is not digest-pinned; record the image ID after building.
+FROM debian:bookworm-slim
+
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends \
+      build-essential \
+      ca-certificates \
+      iproute2 \
+      libcap2-bin \
+      strace \
+      util-linux \
+ && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /lab
+COPY starter/ /lab/starter/
+COPY scripts/ /lab/scripts/
