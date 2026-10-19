@@ -318,36 +318,33 @@ These rules are normative. `scripts/validate_manifest.py` enforces the structura
 | R10 | Every capstone has at least one path and explicit prerequisites. | Reject |
 | R11 | Every non-elective module appears in at least one path. | Reject |
 | R12 | Status and validation transitions follow section 7. | Reject |
-| R13 | The catalog and diagrams are regenerated after a manifest change. | Reject release |
+| R13 | The catalog and dependency views are reviewed for consistency after a manifest change. | Reject release |
 | R14 | Relative links resolve and anchors exist. | Reject release |
 | R15 | Every Mermaid block renders with the pinned CLI version. | Reject release |
 | R16 | Claims are sourced or marked uncertain; no fabricated evidence. | Reject release |
 
 ## 10. Validation procedure
 
-### Planned commands (M1)
+### Current commands
 
-These scripts do **not** exist yet. They are specified here so the M1 implementation has a contract.
+The repository uses one local gate plus an optional Mermaid render check:
 
 ```bash
-python3 scripts/validate_manifest.py manifest/course-manifest.yaml
-python3 scripts/check_links.py .
-python3 scripts/check_markdown.py .
-npx markdownlint-cli2 "**/*.md"
-./scripts/render_mermaid.sh diagrams/*.md
+make check                 # manifest, local links, Markdown lint, strict site build
+.venv/bin/python scripts/check_mermaid.py
+.venv/bin/python scripts/check_mermaid.py --render --require-render  # requires mmdc
 ```
 
 Expected results:
 
-- `validate_manifest.py`: exit 0, zero errors, report counts by level/status.
-- `check_links.py`: exit 0, zero broken relative links or missing anchors.
-- `check_markdown.py`: one H1 per file, no skipped heading levels, balanced fences.
-- `markdownlint-cli2`: exit 0 under the repository configuration.
-- `render_mermaid.sh`: every block renders; output stored outside the repository or in a build artifact.
+- `make check`: exit 0; manifest schema and structural rules pass; local links and anchors pass; Markdown lint reports zero findings; `mkdocs build --strict` succeeds.
+- `scripts/check_mermaid.py` without `--render`: exit 0 and report every Mermaid block; this is a structural check.
+- `scripts/check_mermaid.py --render --require-render`: exit 0 only when every block renders; if `mmdc` is unavailable, the command fails rather than silently claiming rendering.
+- External HTTP checks are opt-in (`scripts/check_links.py --external`) because standards sites frequently block automated clients. They do not replace source review.
 
-### Checks performed in M0
+### Historical M0 checks
 
-The M0 checks were run ad hoc because the scripts are not yet committed. See [`ARCHITECTURE_REVIEW.md`](./ARCHITECTURE_REVIEW.md#6-verification-performed) for commands and results.
+The M0 checks were run ad hoc before the validators were added. The current repeatable commands above supersede them; see [`ARCHITECTURE_REVIEW.md`](./ARCHITECTURE_REVIEW.md#6-verification-performed) for the milestone record.
 
 ## 11. Current snapshot
 

@@ -21,6 +21,27 @@ It does not replace project-specific rubrics. It samples the portfolio against t
 | 6 | Publication outline with claim–evidence map | Research 7, P3/P4 | 10 |
 | 7 | Oral defense | All | 10 |
 
+## Outcome coverage
+
+The portfolio is the evidence set for the drafted research modules. A reviewer must be able to point to the named artifact and the rubric language that supports each outcome.
+
+| Module outcome | Required portfolio evidence | Rubric evidence |
+|---|---|---|
+| `RES-01.O1` | Bounded question, hypotheses, and security threat model | Question and contribution; design |
+| `RES-01.O2` | Study design with controls, data-collection procedure, and validity analysis | Design; analysis and uncertainty |
+| `RES-01.O3` | Search protocol and literature matrix | Literature and evidence |
+| `RES-02.O1` | Sampling, power/precision justification, and test selection | Design; analysis and uncertainty |
+| `RES-02.O2` | Analysis of a dataset or measurement report with effect sizes and intervals | Analysis and uncertainty |
+| `RES-02.O3` | Confounding, selection, leakage, and p-hacking review | Evidence and method; analysis |
+| `RES-06.O1` | Ethics analysis of a concrete research scenario | Ethics and disclosure |
+| `RES-06.O2` | Disclosure plan, ethics application/record, and data-management plan | Ethics and disclosure |
+| `RES-06.O3` | Reproducibility, sharing, and dual-use assessment | Ethics and disclosure; artifact statement |
+| `RES-07.O1` | Thesis or paper proposal with question, related work, method, ethics, and timeline | Question and contribution; writing |
+| `RES-07.O2` | Defense record and revision after feedback | Oral defense |
+| `RES-07.O3` | Pre-registered analysis with success, failure, and stopping criteria | Evidence and method |
+
+Outcomes for `RES-03`, `RES-04`, and `RES-05` are not assessed here while those modules remain `planned`; tutorial 8 is a cross-module design tutorial, not their assessment.
+
 ## What each artifact must demonstrate
 
 ### 1. Literature and evidence

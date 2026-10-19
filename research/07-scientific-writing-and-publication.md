@@ -1,7 +1,8 @@
 # Research 7: Scientific Writing and Publication
 
-> **Track:** Academic Cybersecurity Research · **Level:** L5 · **Prerequisites:** Research 5 and 6 · **Estimated time:** 9 h
+> **Track:** Academic Cybersecurity Research · **Level:** L5 · **Prerequisites:** Research 5 and 6; RES-01–RES-06 (RES-07 module gate) · **Estimated time:** 9 h
 > **Primary module:** RES-07 · **Status:** drafted · **Validation:** structural
+> **Outcomes addressed:** RES-07.O1, RES-07.O2, RES-07.O3
 
 ## Learning outcomes
 

@@ -47,10 +47,12 @@ See [`ASSUMPTIONS_AND_GAPS.md`](./ASSUMPTIONS_AND_GAPS.md) for the full learner 
 1. Read [`COURSE_MAP.md`](./COURSE_MAP.md) for the full architecture, module-by-module outcomes, assessment strategy, and milestones.
 2. Choose a route in [`LEARNING_PATHS.md`](./LEARNING_PATHS.md).
 3. Inspect the prerequisite graph in [`diagrams/dependency-graph.md`](./diagrams/dependency-graph.md).
-4. Check your starting point against [`ASSUMPTIONS_AND_GAPS.md`](./ASSUMPTIONS_AND_GAPS.md).
-5. Review the research and teaching spine in [`RESEARCH_STRAND.md`](./RESEARCH_STRAND.md).
-6. Review the schema and governance rules in [`CURRICULUM_MANIFEST.md`](./CURRICULUM_MANIFEST.md).
-7. Before approving the architecture, work through [`ARCHITECTURE_REVIEW.md`](./ARCHITECTURE_REVIEW.md).
+4. Read [`LAB_SAFETY.md`](./LAB_SAFETY.md) before using any lab or target.
+5. Check your starting point against [`ASSUMPTIONS_AND_GAPS.md`](./ASSUMPTIONS_AND_GAPS.md).
+6. Review the research and teaching spine in [`RESEARCH_STRAND.md`](./RESEARCH_STRAND.md).
+7. Review the schema and governance rules in [`CURRICULUM_MANIFEST.md`](./CURRICULUM_MANIFEST.md) and the authoring contract in [`CONTRIBUTING.md`](./CONTRIBUTING.md).
+8. Use [`GLOSSARY.md`](./GLOSSARY.md) for shared terminology and [`PROGRESS_TRACKER.md`](./PROGRESS_TRACKER.md) for evidence tracking.
+9. Before approving the architecture, work through [`ARCHITECTURE_REVIEW.md`](./ARCHITECTURE_REVIEW.md).
 
 ## First foundations batch
 
@@ -80,11 +82,15 @@ The track requires explicit research questions, evidence, alternative explanatio
 
 ## Repository layout
 
-`✅` = present; `⬜` = planned, not yet created.
+`✅` = present; `◐` = partial or template-only; `⬜` = planned, not yet created.
 
 ```text
 .
 ├── README.md                          ✅  canonical home page; published as docs/index.md
+├── CONTRIBUTING.md                    ✅  authoring, sourcing, review, and AI contract
+├── GLOSSARY.md                        ✅  shared systems and research terminology
+├── LAB_SAFETY.md                      ✅  authorization, isolation, data, and stop conditions
+├── PROGRESS_TRACKER.md                ✅  learner evidence log and gate record
 ├── index.md -> README.md              ✅  root-relative link alias for the home page
 ├── authoring-templates -> templates   ✅  root-relative alias for published template links
 ├── mkdocs.yml                         ✅  MkDocs + Material configuration
@@ -100,6 +106,7 @@ The track requires explicit research questions, evidence, alternative explanatio
 ├── ASSUMPTIONS_AND_GAPS.md            ✅  learner model, diagnostics, risks
 ├── REFERENCES.md                      ✅  verified source ledger
 ├── ARCHITECTURE_REVIEW.md             ✅  decisions, open questions, review checklist
+├── AUDIT_REPORT.md                    ✅  prioritized quality audit and validation record
 ├── manifest/
 │   ├── course-manifest.yaml           ✅  machine-readable curriculum state
 │   └── schema.json                    ✅  JSON Schema 2020-12
@@ -112,7 +119,7 @@ The track requires explicit research questions, evidence, alternative explanatio
 │   ├── research-paper-review.md       ✅  paper critique contract
 │   ├── literature-matrix.md           ✅  search protocol and evidence matrix
 │   ├── experiment-plan.md             ✅  pre-registration-style design
-│   ├── replication-report.md           ✅  replication and deviation report
+│   ├── replication-report.md          ✅  replication and deviation report
 │   ├── publication-outline.md         ✅  claim–evidence map and paper plan
 │   └── architecture-review.md         ✅  architecture review contract
 ├── examples/
@@ -123,6 +130,11 @@ The track requires explicit research questions, evidence, alternative explanatio
 │   └── check_mermaid.py               ✅  structural and optional render checks
 ├── docs/                              ✅  MkDocs publication view (symlinks)
 │   ├── index.md -> ../README.md
+│   ├── CONTRIBUTING.md -> ../CONTRIBUTING.md
+│   ├── GLOSSARY.md -> ../GLOSSARY.md
+│   ├── LAB_SAFETY.md -> ../LAB_SAFETY.md
+│   ├── PROGRESS_TRACKER.md -> ../PROGRESS_TRACKER.md
+│   ├── AUDIT_REPORT.md -> ../AUDIT_REPORT.md
 │   ├── COURSE_MAP.md -> ../COURSE_MAP.md
 │   ├── diagrams -> ../diagrams
 │   ├── manifest -> ../manifest
@@ -132,16 +144,13 @@ The track requires explicit research questions, evidence, alternative explanatio
 │   ├── labs -> ../labs
 │   ├── assessments -> ../assessments
 │   ├── research -> ../research
+│   ├── projects -> ../projects
 │   └── LICENSE -> ../LICENSE
-├── CONTRIBUTING.md                    ⬜  authoring and review workflow
-├── GLOSSARY.md                        ⬜  shared terminology
-├── LAB_SAFETY.md                      ⬜  authorization, isolation, data handling
-├── PROGRESS_TRACKER.md                ⬜  learner-facing progress and evidence log
 ├── tutorials/                         ✅  SYS-01 and SYS-02 tutorials
 ├── labs/                              ✅  two research-informed labs with rubrics, reproducibility notes, and instructor solutions
 ├── assessments/                       ✅  SYS-01, SYS-02, and research portfolio assessments
 ├── research/                          ✅  methods tutorials, templates links, and P1–P4 project ladder
-├── projects/                          ⬜  five capstone briefs and submission packs
+├── projects/                          ◐  capstone index; five briefs still planned
 ```
 
 ## Documentation site
@@ -156,6 +165,7 @@ Prerequisites: **Python 3.10+** (verified with Python 3.14). Node.js is not requ
 | `make serve` | Serves at `http://127.0.0.1:8000` with live reload |
 | `make check` | Runs manifest validation, link/anchor/nav checks, Markdown lint, and a strict MkDocs build |
 | `make build` | Builds the static site into `site/` with `--strict` |
+| `make links-external` | Probes external URLs; 403/429/network failures are reported and must be classified, not blindly treated as dead or live |
 | `make mermaid` | Optionally renders every Mermaid block with `mmdc`; reports a skip if `mmdc` is unavailable |
 | `make clean` | Removes `site/` |
 

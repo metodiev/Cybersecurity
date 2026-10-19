@@ -461,11 +461,11 @@ modules:
     total: 32
   outcomes:
   - id: SYS-02.O1
-    statement: Explain process and thread lifecycle, scheduling, virtual memory, syscalls, file descriptors,
+    statement: Explain process and thread lifecycle, scheduling, syscalls, file descriptors, credentials,
       and user/kernel transitions.
   - id: SYS-02.O2
-    statement: Trace a program's syscalls and map observed behavior to kernel abstractions using strace,
-      dtrace, or equivalent tooling.
+    statement: Trace a program's syscalls and map observed behavior to kernel abstractions using strace
+      or equivalent syscall-tracing tooling.
   - id: SYS-02.O3
     statement: Analyze a privilege-boundary violation scenario and identify the kernel control that failed
       and the evidence that would confirm it.

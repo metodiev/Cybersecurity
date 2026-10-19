@@ -31,9 +31,9 @@ The research track makes those questions explicit and assessable.
 | 5 | [Reproducibility and replication](05-reproducibility-and-replication.md) | Artifact packaging, environment capture, replication types, reporting | RES-02 |
 | 6 | [Ethics, responsible disclosure, and open science](06-ethics-disclosure-and-open-science.md) | Authorization, consent, dual use, CVD, data ethics, authorship | RES-06 |
 | 7 | [Scientific writing and publication](07-scientific-writing-and-publication.md) | Claim–evidence mapping, paper structure, review, revision | RES-07 |
-| 8 | [Domain research designs](08-domain-research-designs.md) | Vulnerability discovery, usable security, formal methods | RES-03/04/05 |
+| 8 | [Domain research designs](08-domain-research-designs.md) | Vulnerability discovery, usable security, formal methods | RES-03/04/05 (planned; design overview only) |
 
-Read tutorials 1–7 in order. Tutorial 8 applies the method to three security subfields and can be read after tutorial 3.
+Read tutorials 1–7 in order once the module gates in [`course-manifest.yaml`](../manifest/course-manifest.yaml) are met. Tutorial 8 applies the method to three security subfields and can be read after tutorial 3; it is a design overview, not completion of the planned modules.
 
 ## Integration with the technical curriculum
 
@@ -74,15 +74,16 @@ flowchart TD
 
 ## Claim taxonomy
 
-Every research artifact must distinguish three kinds of statement:
+Every research artifact must distinguish four categories of statement:
 
 | Type | Definition | Required treatment |
 |---|---|---|
 | **Original result** | Produced by the author's own study, with recorded evidence | Cite the artifact, dataset, code, and analysis; state uncertainty |
 | **Cited claim** | Asserted by another source | Cite the source and the specific claim; do not present it as your result |
 | **Generated example** | Constructed for teaching, illustration, or a hypothetical | Label it explicitly; never present it as measured data |
+| **Assumption** | A condition the work depends on but does not establish | State it, test it where possible, and bound the conclusion if it fails |
 
-A fourth category, **assumption**, must be labeled where the work depends on it. An unlabeled assumption is a defect.
+An unlabeled assumption is a defect.
 
 ## Evidence standard
 

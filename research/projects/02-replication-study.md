@@ -1,6 +1,6 @@
 # P2: Replication Study
 
-> **Difficulty:** intermediate · **Prerequisites:** Research 1–5 · **Estimated effort:** 50–80 h
+> **Difficulty:** intermediate · **Prerequisites:** Research 1–5; RES-02 module gates (DAT-01, PRG-01, RES-01) · **Estimated effort:** 50–80 h
 > **Output:** replication protocol, artifact review, replication report · **Rubric:** [P2 rubric](rubrics.md#p2-replication-study)
 
 ## 1. Question

@@ -52,7 +52,7 @@ The cycle repeats for every instruction. Modern CPUs overlap many instructions a
 
 ### Registers you will actually see
 
-**x86-64** has 16 general-purpose 64-bit registers (`rax`–`r15`), plus `rip`, `rsp` (stack pointer), `rbp` (frame pointer), and `rflags` [L12]. Sub-registers such as `eax`, `ax`, and `al` alias the low parts of `rax`.
+**x86-64** has 16 general-purpose 64-bit registers (`rax`–`r15`, including `rsp` and `rbp`), plus the instruction pointer (`rip`) and flags register (`rflags`) [L12]. `rsp` is conventionally the stack pointer and `rbp` the frame pointer. Sub-registers such as `eax`, `ax`, and `al` alias the low parts of `rax`.
 
 **AArch64** has 31 general-purpose 64-bit registers (`x0`–`x30`), a zero register (`xzr`), a stack pointer (`sp`), and a program counter [L11]. `w0`–`w30` are the 32-bit views. `x29` is conventionally the frame pointer and `x30` the link register holding the return address.
 

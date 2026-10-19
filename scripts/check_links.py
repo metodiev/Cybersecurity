@@ -132,7 +132,7 @@ def check_external(url: str, timeout: float) -> tuple[bool, str]:
         with urllib.request.urlopen(request, timeout=timeout) as response:
             return 200 <= response.status < 400, f"HTTP {response.status}"
     except urllib.error.HTTPError as error:
-        if error.code in (403, 405):
+        if error.code in (403, 404, 405):
             request = urllib.request.Request(
                 url,
                 headers={"User-Agent": "Cybersecurity-Academy-LinkCheck/1.0"},

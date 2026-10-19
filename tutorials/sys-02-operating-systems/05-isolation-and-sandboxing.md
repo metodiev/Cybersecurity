@@ -103,9 +103,9 @@ flowchart TD
   CK --> HW
 ```
 
-A **virtual machine** runs a guest kernel under a hypervisor [N12]. The hypervisor presents virtual hardware and enforces the boundary with hardware virtualization support. A **container** is a process (or group of processes) on the host kernel, confined by namespaces, cgroups, capabilities, seccomp, and LSMs.
+A **virtual machine** runs a guest kernel under a hypervisor. The hypervisor presents virtual hardware and enforces the boundary with hardware virtualization support. A **container** is a process (or group of processes) on the host kernel, confined by namespaces, cgroups, capabilities, seccomp, and LSMs.
 
-The security consequence is direct: a container escape that exploits the shared kernel can affect the host and other containers. A VM escape must compromise the hypervisor or a device model, which is a different and usually smaller attack surface. Neither boundary is absolute.
+The security consequence is direct: a container escape that exploits the shared kernel can affect the host and other containers. A VM escape must compromise the hypervisor or a device model, which is a different attack surface that must be assessed independently; it is not necessarily smaller. Neither boundary is absolute.
 
 **MicroVMs** (for example, lightweight VMs with minimal device models) and **user-space kernels** (for example, gVisor) try to reduce the shared-kernel risk while keeping fast startup. They change the threat model; they do not eliminate it.
 

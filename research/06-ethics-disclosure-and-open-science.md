@@ -1,7 +1,8 @@
 # Research 6: Ethics, Responsible Disclosure, and Open Science
 
-> **Track:** Academic Cybersecurity Research · **Level:** L5 · **Prerequisites:** Research 2 · **Estimated time:** 8 h
+> **Track:** Academic Cybersecurity Research · **Level:** L5 · **Prerequisites:** Research 2; RES-01 (RES-06 module gate) · **Estimated time:** 8 h
 > **Primary module:** RES-06 · **Status:** drafted · **Validation:** structural
+> **Outcomes addressed:** RES-06.O1, RES-06.O2, RES-06.O3
 
 ## Learning outcomes
 

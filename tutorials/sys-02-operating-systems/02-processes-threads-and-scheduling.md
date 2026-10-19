@@ -44,7 +44,7 @@ The kernel stores this in a **process control block**. Linux calls it `task_stru
 | Address space | Private (shared only by explicit mappings) | Shared with sibling threads |
 | File descriptors | Private table | Shared |
 | Credentials | Private | Shared |
-| Signal handlers | Private dispositions | Shared dispositions, per-thread masks |
+| Signal handling | Dispositions are process-wide and shared | Dispositions shared; masks and pending signals are per-thread |
 | Stack | Private | Private per thread |
 | Registers and program counter | Private | Private per thread |
 | Creation cost | Higher | Lower |
@@ -141,12 +141,12 @@ Limits are inherited by children and can be lowered by unprivileged processes. T
 
 ## Worked example: reading a process
 
-Captured on **macOS 27.0.1, arm64**:
+Captured on **macOS 27.0.1, arm64**. The account name is redacted to `learner` before publication:
 
 ```text
 $ ps -o pid,ppid,uid,user,stat,comm -p $$
   PID  PPID   UID USER     STAT COMM
-15375  5145   501 miroslav Ss   /bin/bash
+15375  5145   501 learner Ss   /bin/bash
 ```
 
 Reading the columns:
@@ -161,7 +161,7 @@ Threads on the same host:
 ```text
 $ ps -M $$
 USER       PID   TT   %CPU STAT PRI     STIME     UTIME COMMAND
-miroslav 15375   ??    0.0 S    31T   0:00.00   0:00.00 /bin/bash ...
+learner 15375   ??    0.0 S    31T   0:00.00   0:00.00 /bin/bash ...
 ```
 
 The exact columns are platform-specific. On Linux, `ps -eLf` or `ls /proc/<pid>/task` lists threads. The security-relevant question is the same: which threads belong to which process, and what do they share?

@@ -6,7 +6,7 @@ MKDOCS := $(VENV)/bin/mkdocs
 PYMARKDOWN := $(VENV)/bin/pymarkdown
 MD_FILES := $(shell find . -name '*.md' -not -path './.venv/*' -not -path './site/*' -not -type l | sort)
 
-.PHONY: help venv install serve build lint links manifest mermaid mermaid-strict check clean
+.PHONY: help venv install serve build lint links links-external manifest mermaid mermaid-strict check clean
 
 help:
 	@printf '%s\n' \
@@ -15,6 +15,7 @@ help:
 	  'make build          Build the site into site/ with --strict' \
 	  'make lint           Lint Markdown with .pymarkdown.json' \
 	  'make links          Check local links, anchors, and MkDocs nav targets' \
+	  'make links-external Check external URLs (opt-in; bot/rate-limit failures are expected)' \
 	  'make manifest       Validate the curriculum manifest against its JSON Schema' \
 	  'make mermaid        Render Mermaid blocks if mmdc is available' \
 	  'make mermaid-strict Render Mermaid blocks and fail if mmdc is unavailable' \
@@ -39,6 +40,9 @@ lint: install
 
 links: install
 	$(PY) scripts/check_links.py
+
+links-external: install
+	$(PY) scripts/check_links.py --external
 
 manifest: install
 	$(PY) scripts/validate_manifest.py

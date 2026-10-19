@@ -9,8 +9,9 @@
 | Host | macOS 27.0.1 (build 26A434), arm64 |
 | Linux VM | Not available in the validation session |
 | `strace` | Not available on the capture host |
-| `collect_evidence.sh` | `bash -n` passed; not executed |
-| `verify_evidence.py` | Passed against a temporary synthetic fixture; not a real experiment |
+| `collect_evidence.sh` | Bash syntax passed; executed inside the supplied Debian container as UID 1000 during the quality audit |
+| Container workflow | Image built; collector and verifier exited 0 as `labuser`; denied open returned `EACCES`; `unshare` returned `Operation not permitted` |
+| `verify_evidence.py` | Passed against a temporary synthetic fixture and against the container evidence; not a clean Linux VM experiment |
 | macOS descriptor/error fallback | Executed; real output below |
 
 **Do not treat the expected syscall categories in this solution as captured output.** They describe what a successful Linux trace should contain.

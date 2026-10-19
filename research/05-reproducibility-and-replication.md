@@ -1,7 +1,8 @@
 # Research 5: Reproducibility and Replication
 
-> **Track:** Academic Cybersecurity Research · **Level:** L5 · **Prerequisites:** Research 4 · **Estimated time:** 9 h
+> **Track:** Academic Cybersecurity Research · **Level:** L5 · **Prerequisites:** Research 4; RES-02 module gate · **Estimated time:** 9 h
 > **Primary module:** RES-02 · **Status:** drafted · **Validation:** structural
+> **Outcomes addressed:** RES-02.O2
 
 ## Learning outcomes
 
@@ -46,7 +47,9 @@ The National Academies distinguish **reproducibility** (same data and methods pr
 
 A repository with code but no data, or data but no analysis script, is not a complete artifact.
 
-### Reproducibility levels
+### Course-defined artifact levels
+
+These levels are a course rubric, not ACM artifact badges or a community standard. Use [`R13`](../REFERENCES.md) for the distinction and cite the actual badge policy when making a formal artifact claim.
 
 | Level | Description | Evidence |
 |---|---|---|

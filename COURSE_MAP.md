@@ -177,8 +177,8 @@ The catalog below is generated from the manifest. Each entry states the level, t
 
 **Measurable outcomes**
 
-1. **SYS-02.O1** — Explain process and thread lifecycle, scheduling, virtual memory, syscalls, file descriptors, and user/kernel transitions.
-2. **SYS-02.O2** — Trace a program's syscalls and map observed behavior to kernel abstractions using strace, dtrace, or equivalent tooling.
+1. **SYS-02.O1** — Explain process and thread lifecycle, scheduling, syscalls, file descriptors, credentials, and user/kernel transitions.
+2. **SYS-02.O2** — Trace a program's syscalls and map observed behavior to kernel abstractions using strace or equivalent syscall-tracing tooling.
 3. **SYS-02.O3** — Analyze a privilege-boundary violation scenario and identify the kernel control that failed and the evidence that would confirm it.
 
 **Assessment:** Quiz; syscall-trace lab; failure analysis.  

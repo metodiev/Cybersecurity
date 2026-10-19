@@ -2,7 +2,7 @@
 
 > **Student instructions.** **Module:** SYS-02 · **Level:** L1 · **Type:** research-informed systems lab
 > **Risk:** low to moderate · **Isolation:** disposable Linux VM recommended; container for tracing subset
-> **Time:** 4–6 h · **Status:** drafted · **Validation:** structural; macOS partial path executed, Linux path manual
+> **Time:** 4–6 h · **Status:** drafted · **Validation:** structural; macOS and container partial paths executed, clean Linux VM manual
 
 ## At a glance
 
@@ -81,7 +81,9 @@ If `unshare` fails, record the exact error. A restricted environment is a valid 
 | Compiler | Apple clang 21.0.0 | |
 | `strace` | Not available on the capture host | |
 | Python | 3.9.6 | |
-| Container runtime | Docker CLI present; daemon not running | |
+| Container runtime | Docker CLI present; daemon not running during the original capture | |
+
+**Audit extension (2026-10-19):** a Docker Engine 29.2.1 Linux/arm64 runtime was available during the quality audit. The supplied image built, and the collector and verifier ran as UID 1000. `unshare` remained blocked by the container runtime. This does not replace a clean Linux VM run.
 
 ```bash
 uname -a
@@ -185,7 +187,7 @@ scripts/collect_evidence.sh evidence
 scripts/verify_evidence.py --dir evidence
 ```
 
-The script refuses to run on non-Linux hosts. Review it before running; it only creates files under `evidence/`.
+The script refuses to run on non-Linux hosts or as root. Review it before running; it only creates files under `evidence/`. The supplied `environment/Containerfile` also runs as the non-root `labuser` UID 1000 and includes Python for the verifier.
 
 ## 8. Procedure
 
@@ -208,7 +210,7 @@ chmod 000 evidence/restricted.txt
 ### Task 3: Trace a successful read
 
 ```bash
-strace -f -e trace=openat,read,write,close,exit_group \
+strace -f -e trace=open,openat,read,write,close,exit_group \
   -o evidence/trace-success.txt \
   evidence/fileio evidence/sample.txt \
   > evidence/stdout-success.txt 2> evidence/stderr-success.txt
@@ -227,7 +229,7 @@ As an unprivileged user:
 
 ```bash
 set +e
-strace -f -e trace=openat,exit_group \
+strace -f -e trace=open,openat,exit_group \
   -o evidence/trace-denied.txt \
   evidence/fileio evidence/restricted.txt \
   > evidence/stdout-denied.txt 2> evidence/stderr-denied.txt
@@ -420,10 +422,11 @@ Keep the evidence files you cite. Remove any container and temporary files.
 | Path | Status | Notes |
 |---|---|---|
 | Linux VM with `strace` and `unshare` | Not executed in repository validation | Primary path; requires a Linux runtime |
-| Container tracing subset | Not executed | Docker daemon was not running during validation |
+| Container build | Executed during the quality audit | Debian image built successfully |
+| Container tracing subset | Executed as UID 1000 during the quality audit | Collector and verifier exit 0; `unshare` returned `Operation not permitted` |
 | macOS descriptor/error fallback | Executed during repository validation | Real output recorded in `solution.md` |
 | `collect_evidence.sh` syntax | Validated with `bash -n` | Execution requires Linux |
-| `verify_evidence.py` logic | Validated against a temporary fixture | Not evidence for a real experiment |
+| `verify_evidence.py` logic | Validated against a temporary fixture and the container evidence | Not a substitute for a clean Linux VM run |
 
 ## 16. Extension tasks
 

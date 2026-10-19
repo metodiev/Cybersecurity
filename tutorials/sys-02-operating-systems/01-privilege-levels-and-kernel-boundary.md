@@ -128,9 +128,11 @@ A **confused deputy** is a privileged program that is tricked into using its aut
 
 ## Worked example: identity and privilege on the capture host
 
+> The captured account name is replaced with `learner` before publication. The UID, GID, and group structure are otherwise unchanged.
+
 ```text
 $ id
-uid=501(miroslav) gid=20(staff) groups=20(staff),12(everyone),61(localaccounts),79(_appserverusr),80(admin),81(_appserveradm),701(com.apple.sharepoint.group.1),33(_appstore),98(_lpadmin),100(_lpoperator),204(_developer),250(_analyticsusers),395(com.apple.access_ftp),398(com.apple.access_screensharing),399(com.apple.access_ssh),400(com.apple.access_remote_ae)
+uid=501(learner) gid=20(staff) groups=20(staff),12(everyone),61(localaccounts),79(_appserverusr),80(admin),81(_appserveradm),701(com.apple.sharepoint.group.1),33(_appstore),98(_lpadmin),100(_lpoperator),204(_developer),250(_analyticsusers),395(com.apple.access_ftp),398(com.apple.access_screensharing),399(com.apple.access_ssh),400(com.apple.access_remote_ae)
 ```
 
 Reading it:
@@ -158,7 +160,7 @@ kern.securelevel: 0
 
 | Misconception | Correction |
 |---|---|
-| "Root can do anything." | Capabilities, LSMs, immutable files, secure boot, and hardware restrictions can limit root. |
+| "Root can do anything." | Capabilities, LSMs, filesystem encryption, immutable attributes, and kernel lockdown can restrict root; root remains a highly privileged principal. |
 | "`sudo` is a security boundary." | It is a policy tool; the boundary is the kernel's credential check. A misconfigured `sudoers` rule can grant more than intended. |
 | "User mode cannot affect the kernel." | User mode can invoke a large attack surface; a kernel bug can turn that into kernel execution. |
 | "A container is a lightweight VM." | Containers share the host kernel; a kernel vulnerability may cross the boundary. |

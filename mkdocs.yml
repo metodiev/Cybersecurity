@@ -39,6 +39,11 @@ repo_name: metodiev/Cybersecurity
 
 nav:
   - Home: index.md
+  - Start Here:
+      - Lab Safety: LAB_SAFETY.md
+      - Contributing: CONTRIBUTING.md
+      - Glossary: GLOSSARY.md
+      - Progress Tracker: PROGRESS_TRACKER.md
   - Architecture:
       - Course Map: COURSE_MAP.md
       - Learning Paths: LEARNING_PATHS.md
@@ -48,6 +53,7 @@ nav:
       - Dependency Graph: diagrams/dependency-graph.md
       - References: REFERENCES.md
       - Architecture Review: ARCHITECTURE_REVIEW.md
+      - Quality Audit: AUDIT_REPORT.md
   - Authoring:
       - Tutorial Template: authoring-templates/tutorial.md
       - Lab Template: authoring-templates/lab.md
@@ -95,6 +101,8 @@ nav:
       - P4 Thesis and Paper: research/projects/04-thesis-proposal-and-paper.md
       - Research Project Rubrics: research/projects/rubrics.md
       - Research Portfolio Assessment: assessments/research/assessment.md
+  - Projects:
+      - Capstone Index: projects/README.md
   - Examples:
       - Documentation Example: examples/documentation-example.md
 

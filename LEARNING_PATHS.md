@@ -1,6 +1,6 @@
 # Learning Paths
 
-> **Status:** architecture draft. Paths are sequences through the 67 planned modules. No path is yet authored or validated.
+> **Status:** architecture draft. Paths are sequences through the 67-module design; SYS-01, SYS-02, RES-01, RES-02, RES-06, and RES-07 are drafted, while the remaining modules are planned. No path is yet fully authored or validated.
 
 ## Table of contents
 
@@ -64,7 +64,7 @@ The engineering, application, offensive, and defensive paths add `SYS-03`, `SYS-
 
 ### Rules
 
-1. **No skipping the safety gate.** `ORI-01` and the lab-safety checklist are required before any offensive, forensic, or malware lab.
+1. **No skipping the safety gate.** `ORI-01` and the [lab-safety checklist](./LAB_SAFETY.md#9-required-safety-record) are required before any offensive, forensic, or malware lab.
 2. **Challenge exams, not assumptions.** A learner may challenge `SYS-01`, `PRG-01`, `GIT-01`, or `DAT-01` with a practical exam (≥ 85%) plus an oral explanation. `ORI-01`, `ORI-03`, and all capstones cannot be challenged.
 3. **Substitutions are evidence-based.** A maximum of two modules may be replaced by prior learning, each with a portfolio artifact and reviewer approval.
 4. **Prerequisites are closed.** If a path adds a module, it must add that module's prerequisites. The manifest validator enforces this.

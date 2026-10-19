@@ -86,7 +86,7 @@ A **stack canary** is a value written to the stack frame after the local variabl
 
 Canaries come in several forms:
 
-- **Terminator canary:** contains null, newline, and other bytes that string functions stop at.
+- **Terminator canary:** contains bytes such as NUL, CR, LF, and `0xff`, chosen to make simple string-based overwrites stop or become difficult. The exact effect depends on the function: for example, `strcpy` stops at NUL, not at newline.
 - **Random canary:** a random value chosen at process start.
 - **Random XOR canary:** the random value XORed with the frame pointer, so copying the canary alone is not enough.
 

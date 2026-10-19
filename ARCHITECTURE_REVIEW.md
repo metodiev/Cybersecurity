@@ -7,6 +7,8 @@
 > **M2 update (2026-10-19):** SYS-01 and SYS-02 are drafted with nine tutorials, two labs, two assessments, and instructor solutions. Both are `drafted` / `structural`; the Linux lab paths were not executed in this environment.
 >
 > **M3 update (2026-10-19):** the academic research track is implemented with eight methods tutorials, five templates, a P1–P4 project ladder, objective rubrics, and a portfolio assessment. RES-01, RES-02, RES-06, and RES-07 are `drafted` / `structural`; RES-03–RES-05 remain planned. No research study was executed, so no research result is claimed.
+>
+> **M4 audit update (2026-10-19):** a quality audit added the missing safety, contribution, glossary, and progress artifacts; corrected stale validation and status claims; fixed the SYS-02 container workflow and source link; and recorded prioritized findings in [`AUDIT_REPORT.md`](./AUDIT_REPORT.md). The repository remains a draft: no lab has been executed on a clean Linux VM, no independent technical/safety review has been completed, and CI has not run on GitHub Actions.
 
 ## Table of contents
 
@@ -198,21 +200,32 @@ Twenty-two Mermaid blocks were rendered at M1 across the architecture pages, the
 | Search index | built `search/search_index.json` | 54 pages indexed, including 15 research pages |
 | Research execution | not run | The project briefs are specifications; no data were collected and no results are claimed |
 
+### M4 quality-audit checks
+
+| Check | Command or method | Result |
+|---|---|---|
+| Local gate | `make check` | Exit 0; 67 modules, 201 outcomes, 1,950 h, 5 paths, 149/149 sources; 65 Markdown files, 572 links, 148 external skipped, 0 missing nav targets; 0 lint findings; strict build passed in 0.65 s |
+| Mermaid render | `scripts/check_mermaid.py --mmdc ... --render --require-render` with temporary Node 22.23.3 and Mermaid CLI 12.0.0 | 75 of 75 blocks rendered |
+| SYS-01 macOS path | Fresh temp build, 30-run measurement, `verify_evidence.py` | Four binaries built; measurement and verifier exited 0 |
+| SYS-02 container path | Build image; collector and verifier as UID 1000 | Collector and verifier exited 0; denied open returned `EACCES`; `unshare` returned `Operation not permitted` |
+| External source reachability | Opt-in external checker plus targeted GET checks | No unclassified 404 remains after the `N28` replacement; 403/429/network failures remain and are recorded as blocked or transient |
+| Audit report | [`AUDIT_REPORT.md`](./AUDIT_REPORT.md) | Prioritized findings, automated evidence, limitations, and residual risks recorded |
+
 ## 7. Verification not performed
 
 The following checks are explicitly **not** complete. Do not describe the curriculum as validated until they are.
 
 | Not performed | Why | When |
 |---|---|---|
-| Lab execution on a clean environment | No labs are authored yet | M2 onward, per module |
-| Classroom or cohort pilot | No learners yet | After M2 |
-| Full-text review of standards and papers | M0 verified identity, edition, and landing pages only | During authoring of each module |
-| Exhaustive external link crawl | Bot protection and rate limits; sources were sampled and recorded | Before each release |
-| Accessibility audit | No rendered site or screen-reader test yet | M1/M2 |
-| Manual visual review of every rendered diagram | Render success checked; layout reviewed for the dependency graph only | M1 |
-| CI execution | Workflow exists but was not run on GitHub Actions in this environment | On push or pull request |
-| Security review of future lab code | No lab code exists yet | Before publishing any lab |
-| Legal review of authorization templates | Depends on jurisdiction | M1, with local counsel if needed |
+| Lab execution on a clean environment | SYS-01 macOS path was executed; SYS-02 container path was partially executed; no clean Linux VM run exists | Before `lab_validated` for each module |
+| Classroom or cohort pilot | No learners yet | After the first authored path is reviewed |
+| Full-text review of standards and papers | Sources were checked at landing-page, metadata, or DOI level; not read end to end | During authoring of each module |
+| Exhaustive external link crawl | A one-off crawl and the opt-in external checker found one confirmed 404 (now fixed), plus 403/429/network failures; external checking is not a CI gate | Before each release, with a documented retry and classification |
+| Accessibility audit | Site builds; no screen-reader or keyboard-only audit has been performed | Before public release |
+| Manual visual review of every rendered diagram | A prior milestone rendered 74/74 blocks; this audit could not re-render because `mmdc` is unavailable, and layout has been reviewed only in selected diagrams | Before public release and after diagram changes |
+| CI execution | Workflow exists but has not run on GitHub Actions in this environment | On push or pull request |
+| Independent security and safety review of lab code | Labs exist; the author is not an independent reviewer | Before any lab is marked `lab_validated` or published |
+| Legal review of authorization templates | Depends on jurisdiction | Before using offensive or forensic labs with real systems |
 | Assessment calibration | No learner work yet | After first cohort |
 
 ## 8. First milestone acceptance criteria
@@ -228,11 +241,12 @@ The following checks are explicitly **not** complete. Do not describe the curric
 - [x] Assumptions, gaps, diagnostic plan, and risks.
 - [x] Source ledger with verification status.
 - [x] Architecture review checklist.
-- [ ] Learner confirms or corrects the assumptions in `ASSUMPTIONS_AND_GAPS.md`.
 - [ ] Decisions on Q01–Q10 and Q14.
 - [x] Documentation framework implemented: templates, schema, scripts, CI, example page.
 - [ ] CI has run successfully on GitHub Actions.
-- [ ] Approval to continue with M1 safety and glossary artifacts.
+- [x] Safety, glossary, contribution, and progress artifacts added during the M4 audit.
+- [ ] Independent safety review of the existing labs against `LAB_SAFETY.md`.
+- [ ] Learner confirms the revised assumptions and path choices.
 
 ## 9. M1 status and next milestone
 
@@ -255,14 +269,14 @@ The M1 documentation framework is implemented. It added the following files and 
 | `examples/documentation-example.md` — flowchart, sequence, state | ✅ |
 | `.github/workflows/docs.yml` — manifest, links, lint, strict build | ✅ configured, not yet run on GitHub |
 
-Remaining M1 artifacts:
+M1/M4 governance artifacts:
 
-1. `CONTRIBUTING.md` — authoring workflow, review roles, source policy, AI policy.
-2. `GLOSSARY.md` — shared terminology, seeded from the module catalog.
-3. `LAB_SAFETY.md` — authorization template, isolation checklist, data handling, cleanup, incident reporting.
-4. `PROGRESS_TRACKER.md` — learner-facing module status, evidence log, and gate tracking.
+1. `CONTRIBUTING.md` — ✅ authoring workflow, review roles, source policy, AI policy.
+2. `GLOSSARY.md` — ✅ shared terminology, seeded from the authored tutorials.
+3. `LAB_SAFETY.md` — ✅ authorization, isolation, data handling, cleanup, incident reporting.
+4. `PROGRESS_TRACKER.md` — ✅ learner-facing evidence log and gate tracking.
 
-The first technical lesson is written in M2 only after `LAB_SAFETY.md` and the templates are reviewed.
+**Process defect:** the M2 and M3 content was authored before `LAB_SAFETY.md` existed. That is recorded as a failed ordering assumption, not as a satisfied gate. The policy is now present; both existing labs must be re-reviewed against it before any module is marked `lab_validated` or published.
 
 ## 10. Approval and next action
 

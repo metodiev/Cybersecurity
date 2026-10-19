@@ -1,7 +1,8 @@
 # Research 4: Measurement, Statistics, and Uncertainty
 
-> **Track:** Academic Cybersecurity Research · **Level:** L5 · **Prerequisites:** Research 3 · **Estimated time:** 11 h
+> **Track:** Academic Cybersecurity Research · **Level:** L5 · **Prerequisites:** Research 3; RES-02 module gate · **Estimated time:** 11 h
 > **Primary module:** RES-02 · **Status:** drafted · **Validation:** structural
+> **Outcomes addressed:** RES-02.O2, RES-02.O3
 
 ## Learning outcomes
 

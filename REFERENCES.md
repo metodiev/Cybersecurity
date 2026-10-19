@@ -56,7 +56,7 @@ Each source has a stable ID. Modules reference these IDs in the manifest and in 
 - **N25** — NIST, *Guidelines on Firewalls and Firewall Policy*. *SP 800-41 Rev. 1*. [link](https://csrc.nist.gov/pubs/sp/800/41/r1/final). `V1`
 - **N26** — NIST, *Guide to Intrusion Detection and Prevention Systems (IDPS)*. *SP 800-94*. [link](https://csrc.nist.gov/pubs/sp/800/94/final). `V1`
 - **N27** — NIST, *Guide to Malware Incident Prevention and Handling*. *SP 800-83, 2013-07-22*. [link](https://csrc.nist.gov/pubs/sp/800/83/final). `V1` — Dated relative to modern malware; pair with current ATT&CK and vendor documentation.
-- **N28** — NIST, *Guidelines on Mobile Device Forensics*. *SP 800-101 Rev. 1*. [link](https://csrc.nist.gov/pubs/sp/800/101/r1/final). `V1`
+- **N28** — NIST, *Guidelines on Mobile Device Forensics*. *SP 800-101 Rev. 1, 2014*. [link](https://doi.org/10.6028/NIST.SP.800-101r1). `V1` — DOI resolves to the NIST PDF; link checked 2026-10-19.
 - **N29** — NIST, *Guide to Cyber Threat Information Sharing*. *SP 800-150*. [link](https://csrc.nist.gov/pubs/sp/800/150/final). `V1`
 - **N30** — NIST, *Guidelines on Security and Privacy in Public Cloud Computing*. *SP 800-144*. [link](https://csrc.nist.gov/pubs/sp/800/144/final). `V1`
 - **N31** — NIST, *The NIST Definition of Cloud Computing*. *SP 800-145*. [link](https://csrc.nist.gov/pubs/sp/800/145/final). `V1`

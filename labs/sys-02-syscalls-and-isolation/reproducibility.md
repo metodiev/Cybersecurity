@@ -1,7 +1,7 @@
 # Reproducibility Notes: Lab SYS-02
 
 > **Lab:** [`lab.md`](lab.md) · **Rubric:** [`rubric.md`](rubric.md) · **Instructor solution:** `solution.md` (excluded from the published site)
-> **Last validated:** 2026-10-19 on macOS 27.0.1, arm64 (partial path only)
+> **Last validated:** 2026-10-19 on macOS 27.0.1, arm64, and in a Linux/arm64 container (partial path only)
 
 ## 1. What was validated
 
@@ -11,8 +11,9 @@
 | `verify_evidence.py` logic | Validated against a temporary fixture | Exit 0 on a synthetic fixture; fixture deleted |
 | macOS descriptor and `EACCES` fallback | Validated | Real output recorded in `solution.md` |
 | Linux VM trace, credentials, namespaces | Not executed | Requires a Linux runtime |
-| Container comparison | Not executed | Docker daemon was not running |
-| `Containerfile` build | Not executed | Requires a container build |
+| Container comparison | Not executed | The collector/verifier path was tested; the optional container-vs-host comparison was not |
+| `Containerfile` build | Validated 2026-10-19 | Debian image built successfully |
+| Container collector/verifier | Validated 2026-10-19 as UID 1000 | Collector and verifier exit 0; namespace test blocked by runtime |
 
 The fixture used to test the verifier was a temporary test input, not experimental evidence. Do not cite it as a result.
 
@@ -37,7 +38,7 @@ Do not use a production host. Take a snapshot before the lab and revert after cl
 
 ## 3. Secondary environment: container
 
-The `environment/Containerfile` builds a Debian-based tracing environment. It is optional and **not** suitable for all namespace tests.
+The `environment/Containerfile` builds a Debian-based tracing environment with Python and a non-root `labuser` (UID 1000). It is optional and **not** suitable for all namespace tests. The collector refuses to run as root so the permission hypothesis is not accidentally tested with root authority.
 
 Build and record the image identity:
 

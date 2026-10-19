@@ -1,7 +1,7 @@
 # Research 8: Domain Research Designs
 
 > **Track:** Academic Cybersecurity Research · **Level:** L5 · **Prerequisites:** Research 3 and 4 · **Estimated time:** 10 h
-> **Primary modules:** RES-03, RES-04, RES-05 · **Status:** drafted · **Validation:** structural
+> **Primary modules:** RES-03, RES-04, RES-05 (planned; this tutorial does not complete their labs or assessments) · **Status:** drafted cross-module tutorial · **Validation:** structural
 
 ## Learning outcomes
 

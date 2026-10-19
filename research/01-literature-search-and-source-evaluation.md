@@ -1,7 +1,8 @@
 # Research 1: Literature Search and Source Evaluation
 
-> **Track:** Academic Cybersecurity Research · **Level:** L5 · **Prerequisites:** ORI-03, RES-01 enrollment · **Estimated time:** 10 h
+> **Track:** Academic Cybersecurity Research · **Level:** L5 · **Prerequisites:** ORI-03, RSK-01 (RES-01 module gate) · **Estimated time:** 10 h
 > **Primary module:** RES-01 · **Status:** drafted · **Validation:** structural
+> **Outcomes addressed:** RES-01.O3
 
 ## Learning outcomes
 
@@ -204,7 +205,7 @@ The extraction separates the authors' claim from the reviewer's judgment. That d
 4. What does a PRISMA-style flow communicate that a reference list does not?
 5. Why is "the paper says X" insufficient evidence extraction?
 
-Answers: instructor key in `assessments/research/answer-key.md` (planned; not yet authored).
+Answers are in the instructor key at `assessments/research/answer-key.md` (instructor-only; excluded from the published site).
 
 ## Key takeaways
 

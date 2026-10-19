@@ -20,8 +20,8 @@ The module teaches you to answer questions such as:
 
 By the end of SYS-02 you can:
 
-1. **SYS-02.O1** — Explain process and thread lifecycle, scheduling, virtual memory, syscalls, file descriptors, and user/kernel transitions.
-2. **SYS-02.O2** — Trace a program's syscalls and map observed behavior to kernel abstractions using `strace`, `dtrace`, or equivalent tooling.
+1. **SYS-02.O1** — Explain process and thread lifecycle, scheduling, syscalls, file descriptors, credentials, and user/kernel transitions.
+2. **SYS-02.O2** — Trace a program's syscalls and map observed behavior to kernel abstractions using `strace` or equivalent syscall-tracing tooling.
 3. **SYS-02.O3** — Analyze a privilege-boundary violation scenario and identify the kernel control that failed and the evidence that would confirm it.
 
 The lab is in [`labs/sys-02-syscalls-and-isolation/lab.md`](../../labs/sys-02-syscalls-and-isolation/lab.md). The assessment is in [`assessments/sys-02/assessment.md`](../../assessments/sys-02/assessment.md).
@@ -33,12 +33,12 @@ The lab is in [`labs/sys-02-syscalls-and-isolation/lab.md`](../../labs/sys-02-sy
 | 1 | [Privilege levels and the kernel boundary](01-privilege-levels-and-kernel-boundary.md) | Rings, exception levels, syscall transition, credentials | 6 h |
 | 2 | [Processes, threads, and scheduling](02-processes-threads-and-scheduling.md) | Lifecycle, `fork`/`exec`, signals, scheduling, injection | 7 h |
 | 3 | [Files, permissions, and access control](03-files-permissions-and-access-control.md) | Inodes, descriptors, mode bits, ACLs, TOCTOU | 7 h |
-| 4 | [System calls and tracing](04-system-calls-and-tracing.md) | ABI, `errno`, `strace`/`dtrace`, seccomp, evidence | 6 h |
+| 4 | [System calls and tracing](04-system-calls-and-tracing.md) | ABI, `errno`, `strace` or equivalent, seccomp, evidence | 6 h |
 | 5 | [Isolation and sandboxing](05-isolation-and-sandboxing.md) | Namespaces, cgroups, containers, VMs, sandboxes | 6 h |
 
 ## Platform notes
 
-Examples were captured on **macOS 27.0.1 on arm64**, with **Apple clang 21.0.0** and the system Python 3.9. The syscall-tracing lab is designed for Linux because `strace` is the most reproducible teaching tool; the macOS fallback uses `dtruss` and is documented with its root and SIP constraints. Windows equivalents are named for comparison, not claimed as tested here.
+Examples were captured on **macOS 27.0.1 on arm64**, with **Apple clang 21.0.0** and the system Python 3.9. The syscall-tracing lab is designed for Linux because `strace` is the most reproducible teaching tool. On macOS the lab executes a descriptor/error fallback; `dtruss` is described as an optional platform tool with root and SIP constraints but is not required or claimed as tested here. Windows equivalents are named for comparison, not claimed as tested here.
 
 > **Version note (2026-10-19).** Syscall numbers, scheduler behavior, namespace features, and default security modules differ by kernel version and distribution. Record `uname -a` and the distribution release in every lab report.
 

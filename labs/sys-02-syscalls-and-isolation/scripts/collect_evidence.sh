@@ -6,6 +6,10 @@ if [ "$(uname -s)" != "Linux" ]; then
   echo "ERROR: this script requires Linux. Use the macOS fallback in lab.md." >&2
   exit 2
 fi
+if [ "$(id -u)" -eq 0 ]; then
+  echo "ERROR: run this collector as an unprivileged user; root invalidates the H1 permission test." >&2
+  exit 2
+fi
 
 OUT="${1:-evidence}"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -25,12 +29,12 @@ printf 'synthetic lab data\n' >"$OUT/sample.txt"
 printf 'synthetic restricted data\n' >"$OUT/restricted.txt"
 chmod 000 "$OUT/restricted.txt"
 
-strace -f -e trace=openat,read,write,close,exit_group \
+strace -f -e trace=open,openat,read,write,close,exit_group \
   -o "$OUT/trace-success.txt" "$OUT/fileio" "$OUT/sample.txt" \
   >"$OUT/stdout-success.txt" 2>"$OUT/stderr-success.txt"
 
 set +e
-strace -f -e trace=openat,exit_group \
+strace -f -e trace=open,openat,exit_group \
   -o "$OUT/trace-denied.txt" "$OUT/fileio" "$OUT/restricted.txt" \
   >"$OUT/stdout-denied.txt" 2>"$OUT/stderr-denied.txt"
 DENIED_STATUS=$?
@@ -54,7 +58,7 @@ set -e
 printf 'exit_status=%s\n' "$UNSHARE_STATUS" >"$OUT/namespace-status.txt"
 
 if command -v sha256sum >/dev/null 2>&1; then
-  (cd "$OUT" && find . -maxdepth 1 -type f ! -name SHA256SUMS -print0 \
+  (cd "$OUT" && find . -maxdepth 1 -type f ! -name SHA256SUMS ! -name restricted.txt -print0 \
     | sort -z \
     | xargs -0 sha256sum >SHA256SUMS)
 fi

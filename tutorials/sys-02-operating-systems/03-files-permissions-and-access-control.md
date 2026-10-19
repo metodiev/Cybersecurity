@@ -151,7 +151,7 @@ flowchart TD
 
 ## Worked example: real mode bits and a setuid copy
 
-Captured on **macOS 27.0.1, arm64**:
+Captured on **macOS 27.0.1, arm64**. The owner name is redacted to `learner` before publication:
 
 ```text
 $ umask
@@ -163,17 +163,17 @@ A file created under this umask:
 ```text
 $ printf 'synthetic data\n' > notes.txt
 $ ls -l
--rwsr-xr-x@ 1 miroslav  wheel  166480 Oct 19 15:34 copy-of-echo
--rw-r--r--@ 1 miroslav  wheel      15 Oct 19 15:34 notes.txt
-drwxrwxrwx@ 2 miroslav  wheel      64 Oct 19 15:34 shared
+-rwsr-xr-x@ 1 learner  wheel  166480 Oct 19 15:34 copy-of-echo
+-rw-r--r--@ 1 learner  wheel      15 Oct 19 15:34 notes.txt
+drwxrwxrwx@ 2 learner  wheel      64 Oct 19 15:34 shared
 ```
 
 ```text
 $ stat -f 'mode=%Sp owner=%Su group=%Sg size=%z name=%N' notes.txt
-mode=-rw-r--r-- owner=miroslav group=wheel size=15 name=notes.txt
+mode=-rw-r--r-- owner=learner group=wheel size=15 name=notes.txt
 
 $ stat -f 'mode=%Sp owner=%Su group=%Sg size=%z name=%N' copy-of-echo
-mode=-rwsr-xr-x owner=miroslav group=wheel size=166480 name=copy-of-echo
+mode=-rwsr-xr-x owner=learner group=wheel size=166480 name=copy-of-echo
 ```
 
 Reading the output:
@@ -200,7 +200,7 @@ The setuid copy in this example is owned by the same user who created it, so it 
 | Misconception | Correction |
 |---|---|
 | "`chmod 777` is the fix for permission denied." | It grants every user full control. Diagnose the missing permission instead. |
-| "Root can read any file." | LSMs, encryption, immutable attributes, and secure boot can deny or restrict root. |
+| "Root can read any file." | LSMs, filesystem encryption, immutable attributes, and kernel lockdown can restrict root; none makes root unprivileged. |
 | "A hard link is the same as a copy." | It is another name for the same inode; deleting one name does not delete the data while another exists. |
 | "Deleting a file wipes the data." | It removes a name; the inode and blocks may persist until reused. |
 | "ACLs replace the need for least privilege." | ACLs express policy; a broad ACL is still over-privilege. |

@@ -1,7 +1,8 @@
 # Research 2: Questions, Hypotheses, and Threat Models
 
-> **Track:** Academic Cybersecurity Research · **Level:** L5 · **Prerequisites:** Research 1 · **Estimated time:** 9 h
+> **Track:** Academic Cybersecurity Research · **Level:** L5 · **Prerequisites:** Research 1; RES-01 module gate · **Estimated time:** 9 h
 > **Primary module:** RES-01 · **Status:** drafted · **Validation:** structural
+> **Outcomes addressed:** RES-01.O1, RES-01.O2
 
 ## Learning outcomes
 
@@ -128,25 +129,25 @@ This is a **generated example**, not a study result.
 
 **Broad concern:** "Containers are not isolated enough."
 
-**Refined question:** "For a Linux container running as a non-root user with the default Docker seccomp profile and no host mounts, does adding a read-only root filesystem reduce the set of host files readable after a file-read vulnerability in the application?"
+**Refined question:** "For a Linux container with one writable upload directory and no host mounts, does running the file parser as a non-root user, compared with root inside the container, reduce the number of files outside the upload directory that a path-traversal flaw can modify?"
 
 **Operationalization:**
 
 | Element | Definition |
 |---|---|
 | Population | One pinned container image and runtime version |
-| Treatment | Read-only root filesystem |
-| Baseline | Writable root filesystem; same image and policy |
-| Outcome | Number of host files readable through the vulnerable path |
-| Adversary | Code execution in the application, no host privileges |
-| Evidence | Reproducible test harness, trace, file-access results |
+| Treatment | Parser runs as a non-root UID (for example, 1000) |
+| Baseline | Parser runs as root inside the container; same image, mounts, and policy |
+| Outcome | Number of files outside the upload directory modified through the vulnerable path in a synthetic filesystem tree |
+| Adversary | Code execution in the application, no host privileges, no additional capability |
+| Evidence | Reproducible harness, path and ownership trace, file hashes before and after, container configuration |
 
 **Hypotheses:**
 
-- H0: The readable-host-file count is the same with and without the read-only root filesystem.
-- H1: The count is lower with the read-only root filesystem.
+- H0: The number of modified files outside the upload directory is the same for the root and non-root runs.
+- H1: The number is lower when the parser runs as non-root.
 
-**Alternative explanation:** Any difference may come from a different mount namespace configuration, not the read-only flag. The design must hold mounts constant and record them.
+**Alternative explanation:** Any difference may come from file ownership or a mount option rather than the UID. The design must hold mounts and synthetic-tree ownership constant and record both.
 
 The refined question is narrow enough to answer and broad enough to matter for container hardening. It also exposes an ethical boundary: the test must run in a disposable lab, not a shared host.
 

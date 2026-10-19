@@ -1,7 +1,8 @@
 # Research 3: Experimental Design, Baselines, and Sampling
 
-> **Track:** Academic Cybersecurity Research · **Level:** L5 · **Prerequisites:** Research 2 · **Estimated time:** 11 h
+> **Track:** Academic Cybersecurity Research · **Level:** L5 · **Prerequisites:** Research 2; RES-01, DAT-01, PRG-01 (RES-02 module gate) · **Estimated time:** 11 h
 > **Primary module:** RES-02 · **Status:** drafted · **Validation:** structural
+> **Outcomes addressed:** RES-02.O1
 
 ## Learning outcomes
 

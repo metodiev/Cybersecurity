@@ -17,6 +17,7 @@ REQUIRED = [
 ]
 TRACE_MARKERS = ["openat", "open(", "read(", "write("]
 STATUS_MARKERS = ["Uid:", "CapEff:", "Seccomp:"]
+DENIED_MARKERS = ["EACCES", "Permission denied"]
 
 
 def parse_args() -> argparse.Namespace:
@@ -45,6 +46,20 @@ def main() -> int:
         missing = [marker for marker in STATUS_MARKERS if marker not in text]
         if missing:
             errors.append(f"{status} is missing: {', '.join(missing)}")
+
+    denied = args.dir / "trace-denied.txt"
+    if denied.exists():
+        text = denied.read_text(encoding="utf-8", errors="replace")
+        if not any(marker in text for marker in DENIED_MARKERS):
+            errors.append(f"{denied} does not contain EACCES or Permission denied")
+
+    denied_status = args.dir / "denied-status.txt"
+    if denied_status.exists():
+        text = denied_status.read_text(encoding="utf-8", errors="replace").strip()
+        if not text.startswith("exit_status="):
+            errors.append(f"{denied_status} does not contain exit_status=")
+        elif text == "exit_status=0":
+            errors.append(f"{denied_status} records a successful run; expected nonzero")
 
     if errors:
         for error in errors:

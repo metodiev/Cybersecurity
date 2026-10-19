@@ -8,7 +8,7 @@ The projects form a ladder. Each one adds a research skill and requires the prev
 | Project | Difficulty | Core skill | Prerequisites | Output |
 |---|---|---|---|---|
 | [P1: Structured literature review](01-structured-literature-review.md) | Foundational | Search, screening, synthesis | Research 1–2 | Protocol, matrix, synthesis, gap memo |
-| [P2: Replication study](02-replication-study.md) | Intermediate | Reproduction, deviations, comparison | Research 1–5 | Replication report, artifact review |
+| [P2: Replication study](02-replication-study.md) | Intermediate | Reproduction, deviations, comparison | Research 1–5; RES-02 module gates | Replication report, artifact review |
 | [P3: Controlled experiment](03-controlled-experiment.md) | Advanced | Design, measurement, analysis | Research 1–6 + technical depth | Plan, data, analysis, paper draft |
 | [P4: Thesis proposal and paper](04-thesis-proposal-and-paper.md) | Research-level | Original contribution and defense | All tutorials + P3 | Proposal, thesis/paper, defense |
 
